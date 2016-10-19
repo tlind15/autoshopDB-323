@@ -1,0 +1,7 @@
+Below simply write the names (no attributes) of the classes needed for the database. 
+If the name isnt self explanatory use can use a '//'and write a comment to explain. 
+Don't worry about branches for this. 
+DON'T go deleting stuff if you see something not good/needed just write a comment. 
+
+CLASSES:
+
