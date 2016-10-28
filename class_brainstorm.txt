@@ -5,4 +5,20 @@ DON'T go deleting stuff if you see something not good/needed just write a commen
 
 CLASSES:
 
-Auto
+Vehicle //The car it self
+
+VehicleOwner // Person that owns the vehicle
+
+GarageOwner //Person who owns the business
+			// Are we running ONE garage in the automotive repair business or a series of garages in our business? (Are we a franchise?)
+Mechanic // Person who services the car
+
+AutoManufacturer// Company who created the car
+
+Inventory// Not Sure, keeps records of spare parts for repair
+
+Invoice???// Could be renamed to Reciept or Order which will record what services have been to the car.
+
+Service // states what service has been done to the car
+
+Employee //Not a mechanic. Works in the office. (Not Sure)
