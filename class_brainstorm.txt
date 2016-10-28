@@ -5,3 +5,4 @@ DON'T go deleting stuff if you see something not good/needed just write a commen
 
 CLASSES:
 
+Auto
