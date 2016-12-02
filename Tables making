@@ -1,0 +1,49 @@
+CREATE TABLE `Retirement_Tier` (
+  `tierNumber` INT NOT NULL,
+  `baseDollarRate` INT NOT NULL,
+  `minYearsOnJob` INT NOT NULL,
+  PRIMARY KEY (`tierNumber`));
+  
+  CREATE TABLE `Benefits_Tier` (
+  `tierNumber` INT NOT NULL,
+  `vacationPerHourRate` FLOAT NULL,
+  `sickPerHourRate` FLOAT NULL,
+  `minYearOnJob` INT NULL,
+  PRIMARY KEY (`tierNumber`));
+  
+  CREATE TABLE `Employee_Type` (
+  `type` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`type`));
+  
+  CREATE TABLE `Employee` (
+  `employeeID` INT NOT NULL AUTO_INCREMENT,
+  `type` VARCHAR(50) NOT NULL,
+  `firstName` VARCHAR(50) NULL,
+  `lastName` VARCHAR(50) NULL,
+  `phone` INT NULL,
+  PRIMARY KEY (`employeeID`),
+  INDEX `type_idx` (`type` ASC),
+  CONSTRAINT `type`
+    FOREIGN KEY (`type`)
+    REFERENCES `Employee_Type` (`type`));
+    
+  CREATE TABLE `Present` (
+  `startDate` DATETIME NOT NULL,
+  `tierNumber` INT NOT NULL,
+  `employeeID` INT NOT NULL,
+  PRIMARY KEY (`employeeID`),
+  INDEX `tierNumber_idx` (`tierNumber` ASC),
+  CONSTRAINT `tierNumber`
+    FOREIGN KEY (`tierNumber`)
+    REFERENCES `Benefits_Tier` (`tierNumber`),
+    
+    
+    
+    
+  CONSTRAINT `employeeID`
+    FOREIGN KEY (`employeeID`)
+    REFERENCES `Employee` (`employeeID`));
+    
+  
+
+
