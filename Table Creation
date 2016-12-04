@@ -321,7 +321,14 @@ CREATE TABLE Employee_Type(
  /*------------------------------------------------------------------
  Hours_per_Year
 --------------------------------------------------------------------*/
-CREATE TABLE Hours_per_Year();
+CREATE TABLE Hours_per_Year(
+	employeeID int NOT NULL,
+	year int NOT NULL,
+	hoursWorked int,
+
+	PRIMARY KEY Hours_per_Year_pk (employeeID, year),
+	CONSTRAINT Employee_Hours_per_Year_fk FOREIGN KEY (employeeID) REFERENCES Employee (employeeID)
+);
 
  /*------------------------------------------------------------------
  Past
