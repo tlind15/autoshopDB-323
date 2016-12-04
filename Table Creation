@@ -59,7 +59,18 @@ CREATE TABLE Part_Order (
  /*------------------------------------------------------------------
 	Merchandise_Item_Order
 --------------------------------------------------------------------*/
-CREATE TABLE Merchandise_Item_Order();
+CREATE TABLE Merchandise_Item_Order (
+	merchandiseOrderID int NOT NULL AUTO_INCREMENT,
+	supplierName VARCHAR(50) NOT NULL,
+	merchandiseItem VARCHAR(50) NOT NULL,
+	date Date,
+	quantity int,
+	priceForOne int,
+
+	PRIMARY KEY Merchandise_Item_Order_pk (merchandiseOrderID),
+	CONSTRAINT supplier_merchandise_item_order_fk (supplierName) REFERENCES Supplier(supplierName)
+	CONSTRAINT merchandise_merchandise_item_order_fk (merchandiseItem) REFERENCES Merchandise(name)
+);
 
  /*------------------------------------------------------------------
 	Merchandise_Item_Instore
