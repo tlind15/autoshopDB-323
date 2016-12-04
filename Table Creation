@@ -278,7 +278,14 @@ CREATE TABLE Mentorship(
  /*------------------------------------------------------------------
  Employee_of_The_Month
 --------------------------------------------------------------------*/
-CREATE TABLE Employee_of_The_Month();
+CREATE TABLE Employee_of_The_Month(
+	month int NOT NULL,
+	year int NOT NULL,
+	employeeID int NOT NULL,
+
+	PRIMARY KEY Employee_of_The_Month_pk (month, year, employeeID),
+	CONSTRAINT Employee_Employee_of_The_Month_fk FOREIGN KEY (employeeID) REFERENCES Employee (employeeID)
+);
 
  /*------------------------------------------------------------------
  Reward
