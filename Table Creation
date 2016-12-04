@@ -477,7 +477,22 @@ CREATE TABLE Business(
 	name VARCHAR(100) NOT NULL,
 
 	PRIMARY KEY Business_pk (custID),
+	CONSTRAINT Customer_Business_fk FOREIGN KEY (custID) REFERENCES Customer (custID),
 	CONSTRAINT Business_ck UNIQUE (name)
+);
+
+/*------------------------------------------------------------------
+Address
+--------------------------------------------------------------------*/
+CREATE TABLE Address(
+	custID int NOT NULL,
+	street VARCHAR (50) NOT NULL,
+	zipcode int NOT NULL,
+	addressType VARCHAR (30),
+
+	PRIMARY KEY Address_pk (custID, street),
+	CONSTRAINT Business_Address_fk FOREIGN KEY (custID) REFERENCES Business (custID),
+	CONSTRAINT ZipArea_Address_fk FOREIGN KEY (zipcode) REFERENCES ZipArea (zipcode) 
 );
 
  /*------------------------------------------------------------------
