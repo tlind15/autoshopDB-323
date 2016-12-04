@@ -359,11 +359,13 @@ CREATE TABLE Present(
  Benefits_Tier
 --------------------------------------------------------------------*/
 CREATE TABLE Benefits_Tier(
-  `tierNumber` INT NOT NULL,
-  `vacationPerHourRate` FLOAT NULL,
-  `sickPerHourRate` FLOAT NULL,
-  `minYearOnJob` INT NULL,
-  PRIMARY KEY (`tierNumber`));
+	tierNumber int NOT NULL,
+	vacationPerHourRate Decimal (3,2),
+	sickPerHourRate Decimal (3,2), 
+	minYearsOnJob int, 
+
+	PRIMARY KEY Benefits_Tier_pk (tierNumber)
+);
 
  /*------------------------------------------------------------------
  Retirement_Tier
