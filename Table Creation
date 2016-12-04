@@ -213,7 +213,12 @@ CREATE TABLE Employee (
  /*------------------------------------------------------------------
  Certified_Mechanic
 --------------------------------------------------------------------*/
-CREATE TABLE Certified_Mechanic();
+CREATE TABLE Certified_Mechanic(
+	employeeID int NOT NULL,
+
+	PRIMARY KEY Certified_Mechanic_pk (employeeID),
+	CONSTRAINT Employee_Certified_Mechanic_fk FOREIGN KEY (employeeID) REFERENCES Employee (employeeID)
+);
 
  /*------------------------------------------------------------------
  Specific_Cert
@@ -265,21 +270,6 @@ Employee_Reward
 CREATE TABLE Employee_Type(
   `type` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`type`));
- /*------------------------------------------------------------------
- Employee
---------------------------------------------------------------------*/
-CREATE TABLE Employee(
-  `employeeID` INT NOT NULL AUTO_INCREMENT,
-  `type` VARCHAR(50) NOT NULL,
-  `firstName` VARCHAR(50) NULL,
-  `lastName` VARCHAR(50) NULL,
-  `phone` INT NULL,
-  PRIMARY KEY (`employeeID`),
-  INDEX `type_idx` (`type` ASC),
-  CONSTRAINT `type`
-    FOREIGN KEY (`type`)
-    REFERENCES `Employee_Type` (`type`));
-
  /*------------------------------------------------------------------
  Hours_per_Year
 --------------------------------------------------------------------*/
