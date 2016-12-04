@@ -417,8 +417,15 @@ CREATE TABLE Vehicle(
  /*------------------------------------------------------------------
 Customer
 --------------------------------------------------------------------*/
-CREATE TABLE Customer();
+CREATE TABLE Customer(
+	custID int NOT NULL AUTO_INCREMENT,
+	phone VARCHAR(12) NOT NULL,
+	email VARCHAR (50) NOT NULL,
 
+	PRIMARY KEY Customer_pk (custID),
+	CONSTRAINT Customer_ck 
+		UNIQUE (phone, email)
+);
  /*------------------------------------------------------------------
 Vehicle_Owner
 --------------------------------------------------------------------*/
