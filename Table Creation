@@ -374,7 +374,7 @@ CREATE TABLE Retirement_Tier(
   tierNumber int NOT NULL,
   baseDollarRate int,
   minYearsOnJob int,
-  
+
   PRIMARY KEY Retirement_Tier_pk (tierNumber) 
 );
 
@@ -382,7 +382,7 @@ CREATE TABLE Retirement_Tier(
  Safety_Class
 --------------------------------------------------------------------*/
 CREATE TABLE Safety_Class(
-	date Date, 
+	date Date NOT NULL, 
 	classNumber int,
 
 	PRIMARY KEY Safety_Class_pk (date)
@@ -392,7 +392,14 @@ CREATE TABLE Safety_Class(
  /*------------------------------------------------------------------
  Safety_Class_Attendee
 --------------------------------------------------------------------*/
-CREATE TABLE Safety_Class_Attendee();
+CREATE TABLE Safety_Class_Attendee(
+	employeeID int NOT NULL,
+	classDate Date NOT NULL,
+
+	PRIMARY KEY Safety_Class_Attendee_pk (employeeID, classDate),
+	CONSTRAINT Safety_Class_Safety_Class_Attendee_fk FOREIGN KEY (classDate) REFERENCES Safety_Class (date),
+	CONSTRAINT Employee_Safety_Class_Attendee FOREIGN KEY (employeeID) REFERENCES Employee (employeeID)
+);
 
  /*------------------------------------------------------------------
 Vehicle
