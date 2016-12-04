@@ -583,7 +583,11 @@ CREATE TABLE Prospective_Email(
  /*------------------------------------------------------------------
 Email
 --------------------------------------------------------------------*/
-CREATE TABLE Email();
+CREATE TABLE Email(
+	date DateTime NOT NULL,
+
+	PRIMARY KEY Email_pk (date)
+);
 
  /*------------------------------------------------------------------
 Referred_by_Steady
