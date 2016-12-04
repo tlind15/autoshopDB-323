@@ -534,8 +534,15 @@ CREATE TABLE Referred_by_Premier(
  /*------------------------------------------------------------------
 Steady
 --------------------------------------------------------------------*/
-CREATE TABLE Steady();
+CREATE TABLE Steady(
+	custID int NOT NULL,
+	registerDate Date,
+	points int,
+	ReferredBenefitsUsed int,
 
+	PRIMARY KEY Steady_pk (custID),
+	CONSTRAINT FOREIGN KEY Customer_Steady_fk (custID) REFERENCES Customer (custID)
+);
  /*------------------------------------------------------------------
 Prospective
 --------------------------------------------------------------------*/
