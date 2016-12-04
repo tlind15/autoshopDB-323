@@ -75,7 +75,13 @@ CREATE TABLE Merchandise_Item_Order (
  /*------------------------------------------------------------------
 	Merchandise_Item_Instore
 --------------------------------------------------------------------*/
-CREATE TABLE Merchandise_Item_InStore();
+CREATE TABLE Merchandise_Item_InStore (
+	orderedFromID int NOT NULL,
+	serialNum int NOT NULL,
+
+	PRIMARY KEY Merchandise_Item_InStore_pk (serialNum)
+	CONSTRAINT Merchandise_Item_Order_Merchandise_Item_InStore_fk (orderedFromID) REFERENCES Merchandise_Item_Order(merchandiseOrderID)
+);
 /*------------------------------------------------------------------
  Merchandise
 --------------------------------------------------------------------*/
