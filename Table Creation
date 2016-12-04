@@ -333,7 +333,14 @@ CREATE TABLE Hours_per_Year(
  /*------------------------------------------------------------------
  Past
 --------------------------------------------------------------------*/
-CREATE TABLE Past();
+CREATE TABLE Past(
+	employeeID int NOT NULL,
+	endDate Date, 
+	tierNumber int,
+
+	PRIMARY KEY Past_pk (employeeID),
+	CONSTRAINT Retirement_Tier_Past_fk FOREIGN KEY (tierNumber) REFERENCES Retirement_Tier (tierNumber)
+);
 
  /*------------------------------------------------------------------
  Present
