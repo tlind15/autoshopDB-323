@@ -32,7 +32,13 @@ CREATE TABLE Part_Maintenance (
 
   A part that Dave’s has on hand for use in maintenance items.
 --------------------------------------------------------------------*/
-CREATE TABLE Part_at_Daves();
+CREATE TABLE Part_at_Daves (
+	orderedFromID int NOT NULL,
+	serialNum int NOT NULL,
+
+	PRIMARY KEY Part_at_Daves_pk (serialNum),
+	CONSTRAINT Part_Order_Part_at_Daves_fk (orderedFromID) REFERENCES Part_Order (orderID)
+);
 
  /*------------------------------------------------------------------
 	Part_Order
