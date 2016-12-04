@@ -114,7 +114,21 @@ CREATE TABLE Part (
  /*------------------------------------------------------------------
     Maint_Item_Work
 --------------------------------------------------------------------*/
-CREATE TABLE Maint_Item_Work();
+CREATE TABLE Maintenance_Item_Work (
+	itemWorkID int NOT NULL AUTO_INCREMENT,
+	mechanicID int NOT NULL,
+	ST_ID int NOT NULL,
+	custID int NOT NULL,
+	date Date NOT NULL,
+	vehicleID int NOT NULL,
+	maint_item_name VARCHAR(40) NOT NULL,
+	finalCost int,
+
+	PRIMARY KEY Maintenance_Item_Work_pk (itemWorkID),
+	CONSTRAINT Employee_Maintenance_Item_Work_fk (mechanicID) REFERENCES Employee (employeeID),
+	CONSTRAINT visit_Maintenance_Item_Work_fk (ST_ID, custID, date, vehicleID) REFERENCES Visit (ST_ID, custID, date, vehicleID),
+	CONSTRAINT Vehicle_Maintenance_Maintenance_Item_Work_fk (vehicleID, maint_item_name) REFERENCES Vehicle_Maintenance (vehicleID, maint_item_name)
+);
 
  /*------------------------------------------------------------------
 	Merchandise_Purchase
