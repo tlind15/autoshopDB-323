@@ -456,7 +456,18 @@ CREATE TABLE ZipArea(
  /*------------------------------------------------------------------
 Individual
 --------------------------------------------------------------------*/
-CREATE TABLE Individual();
+CREATE TABLE Individual(
+	custID int NOT NULL,
+	firstName VARCHAR (40) NOT NULL,
+	lastName VARCHAR (40) NOT NULL,
+	street VARCHAR (40) NOT NULL,
+	zipcode int NOT NULL,
+
+	PRIMARY KEY Individual_pk (custID),
+	CONSTRAINT Customer_Individual_fk FOREIGN KEY (custID) REFERENCES Customer (custID),
+	CONSTRAINT ZipArea_Individual_fk FOREIGN KEY (zipcode) REFERENCES ZipArea (zipcode),
+	CONSTRAINT Individual_ck UNIQUE (firstName, lastName, street)
+);
 
  /*------------------------------------------------------------------
 Business
