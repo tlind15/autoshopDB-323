@@ -234,7 +234,12 @@ CREATE TABLE Specific_Cert(
  /*------------------------------------------------------------------
  Certification
 --------------------------------------------------------------------*/
-CREATE TABLE Certification();
+CREATE TABLE Certification(
+	name VARCHAR(60) NOT NULL,
+	skill VARCHAR(40),
+
+	PRIMARY KEY Certification_pk (name),
+);
 
  /*------------------------------------------------------------------
  Promoted_to_ST
