@@ -151,9 +151,19 @@ CREATE TABLE Merchandise_Purchase (
 );
 
  /*------------------------------------------------------------------
-	Vist
+	Visit
 --------------------------------------------------------------------*/
-CREATE TABLE Vist();
+CREATE TABLE Visit (
+	ST_ID int NOT NULL,
+	custID int NOT NULL,
+	date Date NOT NULL,
+	vehicleID int NOT NULL,
+	pointsUsed int,
+
+	PRIMARY KEY Visit_pk (ST_ID, custID, date, vehicleID),
+	CONSTRAINT Employee_Visit_fk (ST_ID) REFERENCES Employee (employeeID),
+	CONSTRAINT Vehicle_Owner_Visit_fk (custID, vehicleID) REFERENCES Vehicle_Owner (custID, vehicleID)
+);
 
  /*------------------------------------------------------------------
 	Maintenance_Interval_Item
