@@ -85,7 +85,11 @@ CREATE TABLE Merchandise_Item_InStore (
 /*------------------------------------------------------------------
  Merchandise
 --------------------------------------------------------------------*/
-CREATE TABLE Merchandise();
+CREATE TABLE Merchandise (
+	name VARCHAR(50) NOT NULL,
+
+	PRIMARY KEY Merchandise_pk (name)
+);
 
  /*------------------------------------------------------------------
 	Supplier
