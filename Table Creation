@@ -199,9 +199,19 @@ CREATE TABLE Maintenanace_Pack_Item (
 );
 
  /*------------------------------------------------------------------
- Mechanic
+ Employee
 --------------------------------------------------------------------*/
-CREATE TABLE Mechanic();
+CREATE TABLE Employee (
+	employeeID int NOT NULL AUTO_INCREMENT,
+	type VARCHAR(35) NOT NULL,
+	firstName VARCHAR(20) NOT NULL,
+	lastName VARCHAR(20) NOT NULL,
+	phone VARCHAR(15) NOT NULL,
+
+	PRIMARY KEY Employee_pk (employeeID),
+	CONSTRAINT Employee_Type_Employee_fk (type) REFERENCES Employee_Type (type),
+	CONSTRAINT Employee_ck UNIQUE (firstName, lastName, phone)
+);
 
  /*------------------------------------------------------------------
  Certified_Mechanic
