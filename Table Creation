@@ -168,7 +168,15 @@ CREATE TABLE Visit (
  /*------------------------------------------------------------------
 	Maintenance_Interval_Item
 --------------------------------------------------------------------*/
-CREATE TABLE Maintenance_Interval_Item();
+CREATE TABLE Maintenance_Interval_Item (
+	numMiles int NOT NULL,
+	vehicleID int NOT NULL,
+	maint_item_name VARCHAR(40) NOT NULL,
+
+	PRIMARY KEY Maintenance_Interval_Item_pk (numMiles, vehicleID, maint_item_name),
+	CONSTRAINT Vehicle_Interval_Maintenance_Interval_Item_fk (numMiles, vehicleID) REFERENCES Vehicle_Interval (milesDriven, vehicleID),
+	CONSTRAINT Vehicle_Maintenance_Maintenance_Interval_Item_fk (vehicleID, maint_item_name) REFERENCES Vehicle_Maintenance (vehicleID, maint_item_name)
+);
 
  /*------------------------------------------------------------------
 	Service_Technician
