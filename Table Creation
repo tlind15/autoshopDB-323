@@ -94,7 +94,13 @@ CREATE TABLE Merchandise (
  /*------------------------------------------------------------------
 	Supplier
 --------------------------------------------------------------------*/
-CREATE TABLE Supplier();
+CREATE TABLE Supplier (
+	name VARCHAR(50) NOT NULL,
+	email VARCHAR(20),
+	phone VARCHAR(12),
+
+	PRIMARY KEY Supplier_pk (name)
+);
 
  /*------------------------------------------------------------------
 	Part
