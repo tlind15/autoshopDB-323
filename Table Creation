@@ -290,12 +290,26 @@ CREATE TABLE Employee_of_The_Month(
  /*------------------------------------------------------------------
  Reward
 --------------------------------------------------------------------*/
-CREATE TABLE Reward();
+CREATE TABLE Reward(
+	name VARCHAR(50) NOT NULL,
+	description VARCHAR(100),
+
+	PRIMARY KEY Reward_pk (name)
+);
 
  /*------------------------------------------------------------------
  Employee_Reward
 --------------------------------------------------------------------*/
-CREATE TABLE Employee_Reward();
+CREATE TABLE Employee_Reward(
+	rewardName VARCHAR(50) NOT NULL,
+	monthAwarded int NOT NULL,
+	yearAwarded int NOT NULL,
+	employeeID int NOT NULL,
+
+	PRIMARY KEY Employee_Reward_pk (rewardName, monthAwarded, yearAwarded, employeeID),
+	CONSTRAINT Reward_Employee_Reward_fk FOREIGN KEY (rewardName) REFERENCES Reward (name),
+	CONSTRAINT Employee_of_The_Month_Employee_Reward FOREIGN KEY (monthAwarded, yearAwarded, employeeID) REFERENCES Employee_of_The_Month (month, year, employeeID)
+);
 /*------------------------------------------------------------------
 Employee_Reward
 --------------------------------------------------------------------*/
