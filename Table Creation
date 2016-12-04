@@ -8,7 +8,7 @@
 	Note: name has been changed to Mname due to query name conflict.
 --------------------------------------------------------------------*/
 CREATE TABLE Maintenance_Item (
-	mName VARCHAR(20) NOT NULL,
+	mName VARCHAR(40) NOT NULL,
 	laborHours int,
 
 	PRIMARY KEY maintenance_item_pk (mName),
@@ -19,7 +19,7 @@ CREATE TABLE Maintenance_Item (
   A particular part as used within a given maintenance item.
 --------------------------------------------------------------------*/
 CREATE TABLE Part_Maintenance (
-	mName VARCHAR(20) NOT NULL,
+	mName VARCHAR(40) NOT NULL,
 	partSerialNum int NOT NULL,
 
 	PRIMARY KEY part_maintenance_pk (mName, partSerialNum),
