@@ -7,11 +7,12 @@
   A maintenance service that Dave’s offers.
 	Note: name has been changed to Mname due to query name conflict.
 --------------------------------------------------------------------*/
-CREATE TABLE Maintence_Item(
-  Mname varchar(20),
-  pointValue integer,
-  labor_hours integer);
+CREATE TABLE Maintenance_Item (
+	mName VARCHAR(20) NOT NULL,
+	laborHours int,
 
+	PRIMARY KEY maintenance_item_pk (mName),
+);
  /*------------------------------------------------------------------
   Part_Maintenance
 
