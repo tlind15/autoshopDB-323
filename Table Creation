@@ -18,7 +18,14 @@ CREATE TABLE Maintenance_Item (
 
   A particular part as used within a given maintenance item.
 --------------------------------------------------------------------*/
-CREATE TABLE Part_Maintenance();
+CREATE TABLE Part_Maintenance (
+	mName VARCHAR(20) NOT NULL,
+	partSerialNum int NOT NULL,
+
+	PRIMARY KEY part_maintenance_pk (mName, partSerialNum),
+	CONSTRAINT maintenance_item_part_maintenance_fk (mName) REFERENCES Maintenance_Item(mName),
+	CONSTRAINT part_at_Daves_part_maintenance_fk (partSerialNum) REFERENCES part_at_Daves (serialNum)
+);
 
  /*------------------------------------------------------------------
   Part_at_Daves
