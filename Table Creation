@@ -404,7 +404,15 @@ CREATE TABLE Safety_Class_Attendee(
  /*------------------------------------------------------------------
 Vehicle
 --------------------------------------------------------------------*/
-CREATE TABLE Vehicle();
+CREATE TABLE Vehicle(
+	vehicleID int NOT NULL AUTO_INCREMENT,
+	make VARCHAR(30) NOT NULL,
+	model VARCHAR(30) NOT NULL,
+	year int NOT NULL,
+
+	PRIMARY KEY Vehicle_pk (vehicleID),
+	CONSTRAINT Vehicle_ck UNIQUE (make, model, year)
+);
 
  /*------------------------------------------------------------------
 Customer
