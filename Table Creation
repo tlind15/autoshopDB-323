@@ -498,7 +498,12 @@ CREATE TABLE Address(
  /*------------------------------------------------------------------
 Referred
 --------------------------------------------------------------------*/
-CREATE TABLE Referred();
+CREATE TABLE Referred(
+	custID int NOT NULL,
+
+	PRIMARY KEY Referred_pk (custID),
+	CONSTRAINT Customer_Referred_fk FOREIGN KEY (custID) REFERENCES Customer (custID);
+);
 
  /*------------------------------------------------------------------
 Referred_by_Steady
