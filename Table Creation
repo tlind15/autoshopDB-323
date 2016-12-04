@@ -508,12 +508,28 @@ CREATE TABLE Referred(
  /*------------------------------------------------------------------
 Referred_by_Steady
 --------------------------------------------------------------------*/
-CREATE TABLE Referred_by_Steady();
+CREATE TABLE Referred_by_Steady(
+	custID int NOT NULL,
+	referredByID int NOT NULL,
+	referredDate Date,
+
+	PRIMARY KEY Referred_by_Steady_pk (custID),
+	CONSTRAINT Referred_Referred_by_Steady_fk FOREIGN KEY (custID) REFERENCES Referred (custID),
+	CONSTRAINT Steady_Referred_by_Steady_fk FOREIGN KEY (referredByID) REFERENCES Steady (custID)
+);
 
  /*------------------------------------------------------------------
 Referred_by_Premier
 --------------------------------------------------------------------*/
-CREATE TABLE Referred_by_Premier();
+CREATE TABLE Referred_by_Premier(
+	custID int NOT NULL,
+	referredByID int NOT NULL,
+	referredDate Date,
+
+	PRIMARY KEY Referred_by_Premier_pk (custID),
+	CONSTRAINT Referred_Referred_by_Premier_fk FOREIGN KEY (custID) REFERENCES Referred (custID),
+	CONSTRAINT Premier_Referred_by_Premier_fk FOREIGN KEY (referredByID) REFERENCES Steady (custID)
+);
 
  /*------------------------------------------------------------------
 Steady
