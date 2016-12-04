@@ -265,7 +265,15 @@ CREATE TABLE Mechanic_Skill(
  /*------------------------------------------------------------------
  Mentorship
 --------------------------------------------------------------------*/
-CREATE TABLE Mentorship();
+CREATE TABLE Mentorship(
+	mentorSkill VARCHAR(45) NOT NULL,
+	mentorEmployeeID int NOT NULL,
+	employeeID int NOT NULL,
+
+	PRIMARY KEY Mentorship_pk (mentorSkill, mentorEmployeeID, employeeID),
+	CONSTRAINT Mechanic_Skill_Mentorship_fk FOREIGN KEY (mentorSkill, mentorEmployeeID) REFERENCES Mechanic_Skill (skill, employeeID),
+	CONSTRAINT Employee_Mentorship_fk FOREIGN KEY (employeeID) REFERENCES Employee (employeeID)
+);
 
  /*------------------------------------------------------------------
  Employee_of_The_Month
