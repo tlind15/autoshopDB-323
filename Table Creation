@@ -570,8 +570,16 @@ CREATE TABLE Steady_Email(
  /*------------------------------------------------------------------
 Prospective_Email
 --------------------------------------------------------------------*/
-CREATE TABLE Prospective_Email();
+CREATE TABLE Prospective_Email(
+	custId int NOT NULL,
+	date DateTime NOT NULL,
+	itemSpecial VARCHAR(40) NOT NULL,
 
+	PRIMARY KEY Prospective_Email_pk (date),
+	CONSTRAINT Prospective_Prospective_Email_fk FOREIGN KEY (custID) REFERENCES Prospective (custID),
+	CONSTRAINT Email_Prospective_Email_fk FOREIGN KEY (date) REFERENCES Email (date),
+	CONSTRAINT Maintenance_Item_Prospective_Email_fk FOREIGN KEY (itemSpecial) REFERENCES Maintenance_Item (mName)
+);
  /*------------------------------------------------------------------
 Email
 --------------------------------------------------------------------*/
