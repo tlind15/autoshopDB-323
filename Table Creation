@@ -178,15 +178,25 @@ CREATE TABLE Maintenance_Interval_Item (
 	CONSTRAINT Vehicle_Maintenance_Maintenance_Interval_Item_fk (vehicleID, maint_item_name) REFERENCES Vehicle_Maintenance (vehicleID, maint_item_name)
 );
 
- /*------------------------------------------------------------------
-	Service_Technician
---------------------------------------------------------------------*/
-CREATE TABLE Service_Technician();
-
- /*------------------------------------------------------------------
  Maint_Pack_Item
 --------------------------------------------------------------------*/
-CREATE TABLE Maint_Pack_Item();
+CREATE TABLE Maintenanace_Pack_Item (
+	packID int NOT NULL AUTO_INCREMENT,
+	mechanicID int NOT NULL,
+	ST_ID int NOT NULL,
+	custID int NOT NULL,
+	date Date NOT NULL,
+	vehicleID int NOT NULL,
+	maint_item_name VARCHAR(40) NOT NULL,
+	numMiles int NOT NULL,
+	finalCost int,
+
+	PRIMARY KEY Maintenanace_Pack_Item_pk (packID),
+	CONSTRAINT Employee_Maintenanace_Pack_Item_fk (mechanicID) REFERENCES Employee(employeeID),
+	CONSTRAINT Visit_Maintenanace_Pack_Item_fk (ST_ID, custID, date, vehicleID) REFERENCES Visit (ST_ID, custID, date, vehicleID),
+	CONSTRAINT Maintenance_Interval_Item_Maintenanace_Pack_Item_fk (vehicleID, maint_item_name, numMiles) REFERENCES Maintenanace_Pack_Item (vehicleID, maint_item_name, numMiles),
+	CONSTRAINT Maintenanace_Pack_Item_ck UNIQUE (mechanicId, ST_ID, custID, date, vehicleID, maint_item_name)
+);
 
  /*------------------------------------------------------------------
  Mechanic
