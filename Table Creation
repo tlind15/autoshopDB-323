@@ -546,12 +546,26 @@ CREATE TABLE Steady(
  /*------------------------------------------------------------------
 Prospective
 --------------------------------------------------------------------*/
-CREATE TABLE Prospective();
+CREATE TABLE Prospective(
+	custID int NOT NULL,
+
+	PRIMARY KEY Prospective_pk (custID),
+	CONSTRAINT Customer_Prospective_fk FOREIGN KEY (custID) REFERENCES Customer (custID)
+);
 
  /*------------------------------------------------------------------
-Referred_by_Steady
+Steady_Email
 --------------------------------------------------------------------*/
-CREATE TABLE Steady_Email();
+CREATE TABLE Steady_Email(
+	custID int NOT NULL,
+	vehicleID int NOT NULL,
+	date DateTime NOT NULL,
+
+	PRIMARY KEY Steady_Email_pk (date),
+	CONSTRAINT Steady_Steady_Email_fk FOREIGN KEY (custID) REFERENCES Steady (custID),
+	CONSTRAINT Vehicle_Owner_Steady_Email_fk FOREIGN KEY (custID, vehicleID) REFERENCES Vehicle_Owner (custID, vehicleID),
+	CONSTRAINT Email_Steady_Email_fk FOREIGN KEY (date) REFERENCES Email (date)
+);
 
  /*------------------------------------------------------------------
 Prospective_Email
