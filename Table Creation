@@ -429,7 +429,17 @@ CREATE TABLE Customer(
  /*------------------------------------------------------------------
 Vehicle_Owner
 --------------------------------------------------------------------*/
-CREATE TABLE Vehicle_Owner();
+CREATE TABLE Vehicle_Owner(
+	custID int NOT NULL,
+	vehicleID int NOT NULL,
+	licensePlate VARCHAR (10),
+	startMileage int,
+	milesPerYear int,
+
+	PRIMARY KEY Vehicle_Owner_pk (custID, vehicleID),
+	CONSTRAINT Customer_Vehicle_Owner_fk FOREIGN KEY (custID) REFERENCES Customer (custID),
+	CONSTRAINT Vehicle_Vehicle_Owner_fk FOREIGN KEY (vehicleID) REFERENCES Vehicle (vehicleID)
+);
 
  /*------------------------------------------------------------------
 ZipArea
