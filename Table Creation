@@ -136,7 +136,19 @@ CREATE TABLE Maintenance_Item_Work (
  /*------------------------------------------------------------------
 	Merchandise_Purchase
 --------------------------------------------------------------------*/
-CREATE TABLE Merchandise_Purchase();
+CREATE TABLE Merchandise_Purchase (
+	purchaseID int NOT NULL AUTO_INCREMENT,
+	ST_ID int NOT NULL,
+	custID int NOT NULL,
+	date Date NOT NULL,
+	vehicleID int NOT NULL,
+	itemSerialNum int NOT NULL,
+
+	PRIMARY KEY Merchandise_Purchase_pk (purchaseID),
+	CONSTRAINT visit_Merchandise_Purchase_fk (ST_ID, custID, date, vehicleID) REFERENCES Visit (ST_ID, custID, date, vehicleID),
+	CONSTRAINT Merchandise_Item_InStore_Merchandise_Purchase_fk (itemSerialNum) REFERENCES Merchandise_Item_InStore (serialNum),
+	CONSTRAINT Merchandise_Purchase_ck UNIQUE (ST_ID, custID, date, vehicleID, itemSerialNum)
+);
 
  /*------------------------------------------------------------------
 	Vist
