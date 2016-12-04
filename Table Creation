@@ -314,8 +314,10 @@ CREATE TABLE Employee_Reward(
 Employee_Reward
 --------------------------------------------------------------------*/
 CREATE TABLE Employee_Type(
-  `type` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`type`));
+  type VARCHAR(50) NOT NULL,
+  
+  PRIMARY KEY Employee_Type_pk (type)
+);
  /*------------------------------------------------------------------
  Hours_per_Year
 --------------------------------------------------------------------*/
