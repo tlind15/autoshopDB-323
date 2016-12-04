@@ -23,8 +23,8 @@ CREATE TABLE Part_Maintenance (
 	partSerialNum int NOT NULL,
 
 	PRIMARY KEY part_maintenance_pk (mName, partSerialNum),
-	CONSTRAINT maintenance_item_part_maintenance_fk (mName) REFERENCES Maintenance_Item(mName),
-	CONSTRAINT part_at_Daves_part_maintenance_fk (partSerialNum) REFERENCES part_at_Daves (serialNum)
+	CONSTRAINT maintenance_item_part_maintenance_fk FOREIGN KEY (mName) REFERENCES Maintenance_Item(mName),
+	CONSTRAINT part_at_Daves_part_maintenance_fk FOREIGN KEY (partSerialNum) REFERENCES part_at_Daves (serialNum)
 );
 
  /*------------------------------------------------------------------
@@ -37,7 +37,7 @@ CREATE TABLE Part_at_Daves (
 	serialNum int NOT NULL,
 
 	PRIMARY KEY Part_at_Daves_pk (serialNum),
-	CONSTRAINT Part_Order_Part_at_Daves_fk (orderedFromID) REFERENCES Part_Order (orderID)
+	CONSTRAINT Part_Order_Part_at_Daves_fk FOREIGN KEY (orderedFromID) REFERENCES Part_Order (orderID)
 );
 
  /*------------------------------------------------------------------
@@ -52,8 +52,8 @@ CREATE TABLE Part_Order (
 	priceForOne int,
 
 	PRIMARY KEY Part_Order_pk (orderID),
-	CONSTRAINT part_part_order_fk (partName) REFERENCES Part (name),
-	CONSTRAINT supplier_part_prder_fk (supplierName) reference Supplier(supplierName),
+	CONSTRAINT part_part_order_fk FOREIGN KEY (partName) REFERENCES Part (name),
+	CONSTRAINT supplier_part_prder_fk FOREIGN KEY (supplierName) REFERENCES Supplier(supplierName),
 	CONSTRAINT Part_Order_ck UNIQUE (partName, supplierName, date),
 );
 
@@ -69,11 +69,10 @@ CREATE TABLE Merchandise_Item_Order (
 	priceForOne int,
 
 	PRIMARY KEY Merchandise_Item_Order_pk (merchandiseOrderID),
-	CONSTRAINT supplier_merchandise_item_order_fk (supplierName) REFERENCES Supplier(supplierName),
-	CONSTRAINT merchandise_merchandise_item_order_fk (merchandiseItem) REFERENCES Merchandise(name),
+	CONSTRAINT supplier_merchandise_item_order_fk FOREIGN KEY (supplierName) REFERENCES Supplier(supplierName),
+	CONSTRAINT merchandise_merchandise_item_order_fk FOREIGN KEY (merchandiseItem) REFERENCES Merchandise(name),
 	CONSTRAINT Merchandise_Item_Order_ck UNIQUE (supplierName, merchandiseItem, date)
 );
-
  /*------------------------------------------------------------------
 	Merchandise_Item_Instore
 --------------------------------------------------------------------*/
@@ -81,8 +80,8 @@ CREATE TABLE Merchandise_Item_InStore (
 	orderedFromID int NOT NULL,
 	serialNum int NOT NULL,
 
-	PRIMARY KEY Merchandise_Item_InStore_pk (serialNum)
-	CONSTRAINT Merchandise_Item_Order_Merchandise_Item_InStore_fk (orderedFromID) REFERENCES Merchandise_Item_Order(merchandiseOrderID)
+	PRIMARY KEY Merchandise_Item_InStore_pk (serialNum),
+	CONSTRAINT Merchandise_Item_Order_Merchandise_Item_InStore_fk FOREIGN KEY (orderedFromID) REFERENCES Merchandise_Item_Order (merchandiseOrderID)
 );
 /*------------------------------------------------------------------
  Merchandise
@@ -112,7 +111,6 @@ CREATE TABLE Part (
 
 	PRIMARY KEY Part_pk (name)
 );
-
  /*------------------------------------------------------------------
     Maint_Item_Work
 --------------------------------------------------------------------*/
@@ -127,9 +125,9 @@ CREATE TABLE Maintenance_Item_Work (
 	finalCost int,
 
 	PRIMARY KEY Maintenance_Item_Work_pk (itemWorkID),
-	CONSTRAINT Employee_Maintenance_Item_Work_fk (mechanicID) REFERENCES Employee (employeeID),
-	CONSTRAINT visit_Maintenance_Item_Work_fk (ST_ID, custID, date, vehicleID) REFERENCES Visit (ST_ID, custID, date, vehicleID),
-	CONSTRAINT Vehicle_Maintenance_Maintenance_Item_Work_fk (vehicleID, maint_item_name) REFERENCES Vehicle_Maintenance (vehicleID, maint_item_name),
+	CONSTRAINT Employee_Maintenance_Item_Work_fk FOREIGN KEY (mechanicID) REFERENCES Employee (employeeID),
+	CONSTRAINT visit_Maintenance_Item_Work_fk FOREIGN KEY (ST_ID, custID, date, vehicleID) REFERENCES Visit (ST_ID, custID, date, vehicleID),
+	CONSTRAINT Vehicle_Maintenance_Maintenance_Item_Work_fk FOREIGN KEY (vehicleID, maint_item_name) REFERENCES Vehicle_Maintenance (vehicleID, maint_item_name),
 	CONSTRAINT Maintenance_Item_Work_ck UNIQUE (mechanicID, ST_ID, custID, date, vehicleID, maint_item_name)
 );
 
@@ -145,8 +143,8 @@ CREATE TABLE Merchandise_Purchase (
 	itemSerialNum int NOT NULL,
 
 	PRIMARY KEY Merchandise_Purchase_pk (purchaseID),
-	CONSTRAINT visit_Merchandise_Purchase_fk (ST_ID, custID, date, vehicleID) REFERENCES Visit (ST_ID, custID, date, vehicleID),
-	CONSTRAINT Merchandise_Item_InStore_Merchandise_Purchase_fk (itemSerialNum) REFERENCES Merchandise_Item_InStore (serialNum),
+	CONSTRAINT visit_Merchandise_Purchase_fk FOREIGN KEY (ST_ID, custID, date, vehicleID) REFERENCES Visit (ST_ID, custID, date, vehicleID),
+	CONSTRAINT Merchandise_Item_InStore_Merchandise_Purchase_fk FOREIGN KEY (itemSerialNum) REFERENCES Merchandise_Item_InStore (serialNum),
 	CONSTRAINT Merchandise_Purchase_ck UNIQUE (ST_ID, custID, date, vehicleID, itemSerialNum)
 );
 
@@ -161,8 +159,8 @@ CREATE TABLE Visit (
 	pointsUsed int,
 
 	PRIMARY KEY Visit_pk (ST_ID, custID, date, vehicleID),
-	CONSTRAINT Employee_Visit_fk (ST_ID) REFERENCES Employee (employeeID),
-	CONSTRAINT Vehicle_Owner_Visit_fk (custID, vehicleID) REFERENCES Vehicle_Owner (custID, vehicleID)
+	CONSTRAINT Employee_Visit_fk FOREIGN KEY (ST_ID) REFERENCES Employee (employeeID),
+	CONSTRAINT Vehicle_Owner_Visit_fk FOREIGN KEY (custID, vehicleID) REFERENCES Vehicle_Owner (custID, vehicleID)
 );
 
  /*------------------------------------------------------------------
@@ -174,8 +172,8 @@ CREATE TABLE Maintenance_Interval_Item (
 	maint_item_name VARCHAR(40) NOT NULL,
 
 	PRIMARY KEY Maintenance_Interval_Item_pk (numMiles, vehicleID, maint_item_name),
-	CONSTRAINT Vehicle_Interval_Maintenance_Interval_Item_fk (numMiles, vehicleID) REFERENCES Vehicle_Interval (milesDriven, vehicleID),
-	CONSTRAINT Vehicle_Maintenance_Maintenance_Interval_Item_fk (vehicleID, maint_item_name) REFERENCES Vehicle_Maintenance (vehicleID, maint_item_name)
+	CONSTRAINT Vehicle_Interval_Maintenance_Interval_Item_fk FOREIGN KEY (numMiles, vehicleID) REFERENCES Vehicle_Interval (milesDriven, vehicleID),
+	CONSTRAINT Vehicle_Maintenance_Maintenance_Interval_Item_fk FOREIGN KEY (vehicleID, maint_item_name) REFERENCES Vehicle_Maintenance (vehicleID, maint_item_name)
 );
 
  Maint_Pack_Item
@@ -192,12 +190,11 @@ CREATE TABLE Maintenanace_Pack_Item (
 	finalCost int,
 
 	PRIMARY KEY Maintenanace_Pack_Item_pk (packID),
-	CONSTRAINT Employee_Maintenanace_Pack_Item_fk (mechanicID) REFERENCES Employee(employeeID),
-	CONSTRAINT Visit_Maintenanace_Pack_Item_fk (ST_ID, custID, date, vehicleID) REFERENCES Visit (ST_ID, custID, date, vehicleID),
-	CONSTRAINT Maintenance_Interval_Item_Maintenanace_Pack_Item_fk (vehicleID, maint_item_name, numMiles) REFERENCES Maintenanace_Pack_Item (vehicleID, maint_item_name, numMiles),
+	CONSTRAINT Employee_Maintenanace_Pack_Item_fk FOREIGN KEY (mechanicID) REFERENCES Employee(employeeID),
+	CONSTRAINT Visit_Maintenanace_Pack_Item_fk FOREIGN KEY (ST_ID, custID, date, vehicleID) REFERENCES Visit (ST_ID, custID, date, vehicleID),
+	CONSTRAINT Maintenance_Interval_Item_Maintenanace_Pack_Item_fk FOREIGN KEY (vehicleID, maint_item_name, numMiles) REFERENCES Maintenanace_Pack_Item (vehicleID, maint_item_name, numMiles),
 	CONSTRAINT Maintenanace_Pack_Item_ck UNIQUE (mechanicId, ST_ID, custID, date, vehicleID, maint_item_name)
 );
-
  /*------------------------------------------------------------------
  Employee
 --------------------------------------------------------------------*/
@@ -209,7 +206,7 @@ CREATE TABLE Employee (
 	phone VARCHAR(15) NOT NULL,
 
 	PRIMARY KEY Employee_pk (employeeID),
-	CONSTRAINT Employee_Type_Employee_fk (type) REFERENCES Employee_Type (type),
+	CONSTRAINT Employee_Type_Employee_fk FOREIGN KEY (type) REFERENCES Employee_Type (type),
 	CONSTRAINT Employee_ck UNIQUE (firstName, lastName, phone)
 );
 
