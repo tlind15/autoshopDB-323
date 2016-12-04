@@ -223,8 +223,14 @@ CREATE TABLE Certified_Mechanic(
  /*------------------------------------------------------------------
  Specific_Cert
 --------------------------------------------------------------------*/
-CREATE TABLE Specific_Cert();
+CREATE TABLE Specific_Cert(
+	employeeID int NOT NULL,
+	cert_name VARCHAR(60) NOT NULL,
 
+	PRIMARY KEY Specific_Cert_pk (employeeID, cert_name),
+	CONSTRAINT Certified_Mechanic_Specific_Cert_fk FOREIGN KEY (employeeID) REFERENCES Certified_Mechanic (employeeID),
+	CONSTRAINT Certification_Specific_Cert_fk FOREIGN KEY (cert_name) REFERENCES Certification (name)
+);
  /*------------------------------------------------------------------
  Certification
 --------------------------------------------------------------------*/
