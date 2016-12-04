@@ -472,7 +472,13 @@ CREATE TABLE Individual(
  /*------------------------------------------------------------------
 Business
 --------------------------------------------------------------------*/
-CREATE TABLE Business();
+CREATE TABLE Business(
+	custID int NOT NULL,
+	name VARCHAR(100) NOT NULL,
+
+	PRIMARY KEY Business_pk (custID),
+	CONSTRAINT Business_ck UNIQUE (name)
+);
 
  /*------------------------------------------------------------------
 Referred
