@@ -43,7 +43,18 @@ CREATE TABLE Part_at_Daves (
  /*------------------------------------------------------------------
 	Part_Order
 --------------------------------------------------------------------*/
-CREATE TABLE Part_Order();
+CREATE TABLE Part_Order (
+	orderID int NOT NULL AUTO_INCREMENT,
+	partName VARCHAR(50) NOT NULL,
+	supplierName VARCHAR(50) NOT NULL, 
+	date DATE,
+	quantity int,
+	priceForOne int,
+
+	PRIMARY KEY Part_Order_pk (orderID),
+	CONSTRAINT part_part_order_fk (partName) REFERENCES Part (name),
+	CONSTRAINT supplier_part_prder_fk (supplierName) reference Supplier(supplierName)
+);
 
  /*------------------------------------------------------------------
 	Merchandise_Item_Order
