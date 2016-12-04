@@ -371,10 +371,12 @@ CREATE TABLE Benefits_Tier(
  Retirement_Tier
 --------------------------------------------------------------------*/
 CREATE TABLE Retirement_Tier(
-  `tierNumber` INT NOT NULL,
-  `baseDollarRate` INT NOT NULL,
-  `minYearsOnJob` INT NOT NULL,
-  PRIMARY KEY (`tierNumber`));
+  tierNumber int NOT NULL,
+  baseDollarRate int,
+  minYearsOnJob int,
+  
+  PRIMARY KEY Retirement_Tier_pk (tierNumber) 
+);
 
  /*------------------------------------------------------------------
  Safety_Class
