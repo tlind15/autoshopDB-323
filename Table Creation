@@ -339,6 +339,7 @@ CREATE TABLE Past(
 	tierNumber int,
 
 	PRIMARY KEY Past_pk (employeeID),
+	CONSTRAINT Employee_Past_fk FOREIGN KEY (employeeID) REFERENCES Employee (employeeID),
 	CONSTRAINT Retirement_Tier_Past_fk FOREIGN KEY (tierNumber) REFERENCES Retirement_Tier (tierNumber)
 );
 
@@ -346,23 +347,15 @@ CREATE TABLE Past(
  Present
 --------------------------------------------------------------------*/
 CREATE TABLE Present(
-  `startDate` DATETIME NOT NULL,
-  `tierNumber` INT NOT NULL,
-  `employeeID` INT NOT NULL,
-  PRIMARY KEY (`employeeID`),
-  INDEX `tierNumber_idx` (`tierNumber` ASC),
-  CONSTRAINT `tierNumber`
-    FOREIGN KEY (`tierNumber`)
-    REFERENCES `Benefits_Tier` (`tierNumber`),
-    
-    
-    
-    
-  CONSTRAINT `employeeID`
-    FOREIGN KEY (`employeeID`)
-    REFERENCES `Employee` (`employeeID`));
+ 	employeeID int NOT NULL,
+ 	startDate Date,
+ 	tierNumber int,
 
- /*------------------------------------------------------------------
+ 	PRIMARY KEY Present_pk (employeeID),
+ 	CONSTRAINT Employee_Present_fk FOREIGN KEY (employeeID) REFERENCES Employee (employeeID),
+	CONSTRAINT Benefits_Tier_Present_fk FOREIGN KEY (tierNumber) REFERENCES Benefits_Tier (tierNumber)
+ );
+------------------------
  Benefits_Tier
 --------------------------------------------------------------------*/
 CREATE TABLE Benefits_Tier(
