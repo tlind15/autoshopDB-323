@@ -381,7 +381,13 @@ CREATE TABLE Retirement_Tier(
  /*------------------------------------------------------------------
  Safety_Class
 --------------------------------------------------------------------*/
-CREATE TABLE Safety_Class();
+CREATE TABLE Safety_Class(
+	date Date, 
+	classNumber int,
+
+	PRIMARY KEY Safety_Class_pk (date)
+);
+
 
  /*------------------------------------------------------------------
  Safety_Class_Attendee
