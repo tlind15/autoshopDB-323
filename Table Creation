@@ -444,7 +444,14 @@ CREATE TABLE Vehicle_Owner(
  /*------------------------------------------------------------------
 ZipArea
 --------------------------------------------------------------------*/
-CREATE TABLE ZipArea();
+CREATE TABLE ZipArea(
+	zipcode int NOT NULL,
+	city VARCHAR(40) NOT NULL,
+	state VARCHAR (40) NOT NULL,
+
+	PRIMARY ZipArea_pk (zipcode),
+	CONSTRAINT ZipArea_ck UNIQUE (city, state)
+);
 
  /*------------------------------------------------------------------
 Individual
