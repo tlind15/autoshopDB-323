@@ -616,4 +616,12 @@ CREATE TABLE Vehicle_Interval (
 /*-------------------------------------------------------------------
 Vehicle_Maintenance
 --------------------------------------------------------------------*/
-CREATE TABLE Vehicle_Maintenance ();
+CREATE TABLE Vehicle_Maintenance (
+	vehicleID int NOT NULL, 
+	maint_item_name VARCHAR(40) NOT NULL,
+	cost int,
+
+	PRIMARY KEY Vehicle_Maintenance_pk (vehicleID, maint_item_name),
+	CONSTRAINT Vehicle_Vehicle_Maintenance_fk FOREIGN KEY (vehicleID) REFERENCES Vehicle (vehicleID),
+	CONSTRAINT Maintenance_Item_Vehicle_Maintenance_fk FOREIGN KEY (maint_item_name) REFERENCES Maintenance_Item (mName)
+);
