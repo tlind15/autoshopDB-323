@@ -1,14 +1,14 @@
 INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
-	values ( '00000000001', 'Service Technitian','Tom', 'Jeep','310-890-1010');
+	values ( '00000000001', 'Service Technician','Tom', 'Jeep','310-890-1010');
 INSERT INTO Employee ( type, firstName, lastName, phone)
-	values ( 'Service Technitian','Jerry', 'Austin','319-990-2020');
+	values ( 'Service Technician','Jerry', 'Austin','319-990-2020');
 
 INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
-	values ( '00000000003', 'Service Technitian','Bob', 'Jhonson','311-990-1010');
+	values ( '00000000003', 'Service Technician','Bob', 'Jhonson','311-990-1010');
 INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
-	values ( '00000000005', 'Service Technitian','Chris', 'bomb','312-330-1234');
+	values ( '00000000005', 'Service Technician','Chris', 'bomb','312-330-1234');
 INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
-	values ( '00000000007', 'Service Technitian','Easy', 'Life','390-882-9786');
+	values ( '00000000007', 'Service Technician','Easy', 'Life','390-882-9786');
 
 INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
 	values ( '00000000002', 'Mechanic','Jerry', 'Austin','319-990-2020');
@@ -22,13 +22,13 @@ INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
 
     
 INSERT INTO Employee_Type (type)
-	values ('Service Technitian');
+	values ('Service Technician');
     
 INSERT INTO Employee_Type (type)
 	values ('Mechanic');
 
 INSERT INTO Employee_Type(type)
-	values ('Service Technitian and Mechanic');
+	values ('Service Technician and Mechanic');
 
 INSERT INTO Skill (skillName)
 	values ('Oil change');
