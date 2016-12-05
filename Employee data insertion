@@ -1,23 +1,19 @@
-INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
-	values ( '00000000001', 'Service Technician','Tom', 'Jeep','310-890-1010');
 INSERT INTO Employee ( type, firstName, lastName, phone)
-	values ( 'Service Technician','Jerry', 'Austin','319-990-2020');
-
-INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
-	values ( '00000000003', 'Service Technician','Bob', 'Jhonson','311-990-1010');
-INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
-	values ( '00000000005', 'Service Technician','Chris', 'bomb','312-330-1234');
-INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
-	values ( '00000000007', 'Service Technician','Easy', 'Life','390-882-9786');
-
-INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
-	values ( '00000000002', 'Mechanic','Jerry', 'Austin','319-990-2020');
-INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
-	values ( '00000000004', 'Mechanic','Gerry', 'Cody','318-890-2020');
-INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
-	values ( '00000000006', 'Mechanic','Ohm', 'rubby','333-888-7777');
-INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
-	values ( '00000000008', 'Mechanic','Hard', 'Life','410-188-3636');
+	values (  'Service Technician','Tom', 'Jeep','310-890-1010');
+INSERT INTO Employee ( type, firstName, lastName, phone)
+	values (  'Service Technician and Mechanic','Jerry', 'Austin','319-990-2020');
+INSERT INTO Employee ( type, firstName, lastName, phone)
+	values (  'Service Technician','Bob', 'Jhonson','311-990-1010');
+INSERT INTO Employee ( type, firstName, lastName, phone)
+	values (  'Mechanic','Gerry', 'Cody','318-890-2020');
+INSERT INTO Employee ( type, firstName, lastName, phone)
+	values (  'Service Technician','Chris', 'bomb','312-330-1234');
+INSERT INTO Employee ( type, firstName, lastName, phone)
+	values (  'Mechanic','Ohm', 'rubby','333-888-7777');
+INSERT INTO Employee ( type, firstName, lastName, phone)
+	values (  'Service Technician','Easy', 'Life','390-882-9786');
+INSERT INTO Employee ( type, firstName, lastName, phone)
+	values (  'Mechanic','Hard', 'Life','410-188-3636');
 
 
     
