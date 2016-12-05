@@ -531,6 +531,19 @@ CREATE TABLE Referred_by_Premier(
 	CONSTRAINT Premier_Referred_by_Premier_fk FOREIGN KEY (referredByID) REFERENCES Steady (custID)
 );
 
+/*------------------------------------------------------------------
+Premier
+--------------------------------------------------------------------*/
+CREATE TABLE Premier(
+	custID int NOT NULL,
+	registerDate Date,
+	points int,
+	ReferredBenefitsUsed int,
+
+	PRIMARY KEY Premier_pk (custID),
+	CONSTRAINT FOREIGN KEY Customer_Premier_fk (custID) REFERENCES Customer (custID)
+);
+
  /*------------------------------------------------------------------
 Steady
 --------------------------------------------------------------------*/
