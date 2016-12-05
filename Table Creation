@@ -423,7 +423,7 @@ CREATE TABLE Maintenance_Pack_Item (
     CONSTRAINT Visit_Maintenanace_Pack_Item_fk FOREIGN KEY (ST_ID , custID , vehicleID , date)
         REFERENCES Visit (ST_ID , custID , vehicleID , date),
     CONSTRAINT Maintenance_Interval_Item_Maintenanace_Pack_Item_fk FOREIGN KEY (vehicleID , maint_item_name , numMiles) /*Issue here*/
-        REFERENCES Maintenanace_Interval_Item (vehicleID , maint_item_name , numMiles),
+        REFERENCES Maintenance_Interval_Item (vehicleID , maint_item_name , numMiles),
     CONSTRAINT Maintenanace_Pack_Item_ck UNIQUE (mechanicId , ST_ID , custID , date , vehicleID , maint_item_name , numMiles)
 );
 
