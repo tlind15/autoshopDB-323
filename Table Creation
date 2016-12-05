@@ -590,5 +590,24 @@ CREATE TABLE Email(
 );
 
  /*------------------------------------------------------------------
-Referred_by_Steady
+Premier Payments
 --------------------------------------------------------------------*/
+CREATE TABLE Premier_Payment(
+	custID int NOT NULL,
+	month int NOT NULL,
+	year int NOT NULL,
+	paymentTotal int,
+
+	PRIMARY KEY Premier_Payments_pk (custID, month, year),
+	CONSTRAINT Premier_Premier_Payments_fk FOREIGN KEY (custID) REFERENCES Premier (custID)
+);
+
+/*-------------------------------------------------------------------
+Vehicle_Interval
+--------------------------------------------------------------------*/
+CREATE TABLE Vehicle_Interval ();
+
+/*-------------------------------------------------------------------
+Vehicle_Maintenance
+--------------------------------------------------------------------*/
+CREATE TABLE Vehicle_Maintenance ();
