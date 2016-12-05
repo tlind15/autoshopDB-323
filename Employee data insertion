@@ -61,55 +61,55 @@ INSERT INTO Certification(name,skill)
 
 
 INSERT INTO Certified_Mechanic(employeeID)
-	values ('00000000002');
+	values (2);
 INSERT INTO Certified_Mechanic(employeeID)
-	values ('00000000004');
+	values (4);
 
 INSERT INTO Specific_Cert(employeeID,cert_name)
-	values ('00000000002','Certification of Tire balance check');
+	values (2,'Certification of Tire balance check');
 
 INSERT INTO Specific_Cert(employeeID,cert_name)
-	values ('00000000002','Certification of Bumper fix');
+	values (2,'Certification of Bumper fix');
 
 INSERT INTO Specific_Cert(employeeID,cert_name)
-	values ('00000000002','Certification of Head light fix');
+	values (2,'Certification of Head light fix');
 
 INSERT INTO Specific_Cert(employeeID,cert_name)
-	values ('00000000002','Certification of Windshield repair');
+	values (2,'Certification of Windshield repair');
 
 INSERT INTO Specific_Cert(employeeID,cert_name)
-	values ('00000000004','Certification of Engin check');
+	values (4,'Certification of Engin check');
 
 INSERT INTO Mechanic_Skill(skill,employeeID)
-	values ('Oil change','00000000002');
+	values ('Oil change',2);
 INSERT INTO Mechanic_Skill(skill,employeeID)
-	values ('Tire balance check','00000000002');
+	values ('Tire balance check',2);
 INSERT INTO Mechanic_Skill(skill,employeeID)
-	values ('Bumper fix','00000000002');
+	values ('Bumper fix',2);
 INSERT INTO Mechanic_Skill(skill,employeeID)
-	values ('Head light fix','00000000002');
+	values ('Head light fix',2);
 INSERT INTO Mechanic_Skill(skill,employeeID)
-	values ('Windshield repair','00000000002');
+	values ('Windshield repair',2);
 
 
 INSERT INTO Mechanic_Skill(skill,employeeID)
-	values ('Windshield repair','00000000008');
+	values ('Windshield repair',8);
 
 
 INSERT INTO Mechanic_Skill(skill, employeeID)
-	values ('Engin check','00000000004');
+	values ('Engin check',4);
 
 INSERT INTO Mentorship (mentorSkill,mentorEmployeeID,employeeID)
-	values ('Oil change','00000000002','00000000006');
+	values ('Oil change',2,6);
 
 INSERT INTO Mentorship (mentorSkill,mentorEmployeeID,employeeID)
-	values ('Oil change','00000000002','00000000008');
+	values ('Oil change',2,6);
 
 INSERT INTO Mentorship (mentorSkill,mentorEmployeeID,employeeID)
-	values ('Engin check','00000000004','00000000006');
+	values ('Engin check',4,6);
     
 INSERT INTO Mentorship (mentorSkill,mentorEmployeeID,employeeID)
-	values ('Windshield repair','00000000008','00000000006');
+	values ('Windshield repair',8,6);
 
 INSERT INTO Benefits_Tier (tierNumber,vacationPerHourRate,sickPerHourRate,minYearsOnJob)
 	values (1,0.1,0.1,1);
