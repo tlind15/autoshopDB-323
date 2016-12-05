@@ -1,0 +1,116 @@
+INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
+	values ( '00000000001', 'Service Technitian','Tom', 'Jeep','310-890-1010');
+INSERT INTO Employee ( type, firstName, lastName, phone)
+	values ( 'Service Technitian','Jerry', 'Austin','319-990-2020');
+
+INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
+	values ( '00000000003', 'Service Technitian','Bob', 'Jhonson','311-990-1010');
+INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
+	values ( '00000000005', 'Service Technitian','Chris', 'bomb','312-330-1234');
+INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
+	values ( '00000000007', 'Service Technitian','Easy', 'Life','390-882-9786');
+
+INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
+	values ( '00000000002', 'Mechanic','Jerry', 'Austin','319-990-2020');
+INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
+	values ( '00000000004', 'Mechanic','Gerry', 'Cody','318-890-2020');
+INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
+	values ( '00000000006', 'Mechanic','Ohm', 'rubby','333-888-7777');
+INSERT INTO Employee (employeeID, type, firstName, lastName, phone)
+	values ( '00000000008', 'Mechanic','Hard', 'Life','410-188-3636');
+
+
+    
+INSERT INTO Employee_Type (type)
+	values ('Service Technitian');
+    
+INSERT INTO Employee_Type (type)
+	values ('Mechanic');
+
+INSERT INTO Employee_Type(type)
+	values ('Service Technitian and Mechanic');
+
+INSERT INTO Skill (skillName)
+	values ('Oil change');
+INSERT INTO Skill (skillName)
+	values ('Engin check');
+INSERT INTO Skill (skillName)
+	values ('Tire change');
+INSERT INTO Skill (skillName)
+	values ('Tire balance check');
+INSERT INTO Skill (skillName)
+	values ('Bumper fix');
+INSERT INTO Skill (skillName)
+	values ('Head light fix');
+INSERT INTO Skill (skillName)
+	values ('Windshield repair');
+
+INSERT INTO Certification(name,skill)
+	values ('Certification of Oil change','Oil change');
+
+INSERT INTO Certification(name,skill)
+	values ('Certification of Engin check','Engin check');
+    
+INSERT INTO Certification(name,skill)
+	values ('Certification of Tire balance check','Tire balance check');
+
+INSERT INTO Certification(name,skill)
+	values ('Certification of Bumper fix','Bumper fix');
+    
+INSERT INTO Certification(name,skill)
+	values ('Certification of Head light fix','Head light fix');
+
+INSERT INTO Certification(name,skill)
+	values ('Certification of Windshield repair','Windshield repair');
+
+
+INSERT INTO Certified_Mechanic(employeeID)
+	values ('00000000002');
+INSERT INTO Certified_Mechanic(employeeID)
+	values ('00000000004');
+
+INSERT INTO Specific_Cert(employeeID,cert_name)
+	values ('00000000002','Certification of Tire balance check');
+
+INSERT INTO Specific_Cert(employeeID,cert_name)
+	values ('00000000002','Certification of Bumper fix');
+
+INSERT INTO Specific_Cert(employeeID,cert_name)
+	values ('00000000002','Certification of Head light fix');
+
+INSERT INTO Specific_Cert(employeeID,cert_name)
+	values ('00000000002','Certification of Windshield repair');
+
+INSERT INTO Specific_Cert(employeeID,cert_name)
+	values ('00000000004','Certification of Engin check');
+
+INSERT INTO Mechanic_Skill(skill,employeeID)
+	values ('Oil change','00000000002');
+INSERT INTO Mechanic_Skill(skill,employeeID)
+	values ('Tire balance check','00000000002');
+INSERT INTO Mechanic_Skill(skill,employeeID)
+	values ('Bumper fix','00000000002');
+INSERT INTO Mechanic_Skill(skill,employeeID)
+	values ('Head light fix','00000000002');
+INSERT INTO Mechanic_Skill(skill,employeeID)
+	values ('Windshield repair','00000000002');
+
+
+INSERT INTO Mechanic_Skill(skill,employeeID)
+	values ('Windshield repair','00000000008');
+
+
+INSERT INTO Mechanic_Skill(skill, employeeID)
+	values ('Engin check','00000000004');
+
+INSERT INTO Mentorship (mentorSkill,mentorEmployeeID,employeeID)
+	values ('Oil change','00000000002','00000000006');
+
+INSERT INTO Mentorship (mentorSkill,mentorEmployeeID,employeeID)
+	values ('Oil change','00000000002','00000000008');
+
+INSERT INTO Mentorship (mentorSkill,mentorEmployeeID,employeeID)
+	values ('Engin check','00000000004','00000000006');
+    
+INSERT INTO Mentorship (mentorSkill,mentorEmployeeID,employeeID)
+	values ('Windshield repair','00000000008','00000000006');
