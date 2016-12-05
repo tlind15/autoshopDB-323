@@ -605,7 +605,13 @@ CREATE TABLE Premier_Payment(
 /*-------------------------------------------------------------------
 Vehicle_Interval
 --------------------------------------------------------------------*/
-CREATE TABLE Vehicle_Interval ();
+CREATE TABLE Vehicle_Interval (
+	vehicleID int NOT NULL,
+	milesDriven int NOT NULL,
+
+	PRIMARY KEY Vehicle_Interval_pk (vehicleID, milesDriven),
+	CONSTRAINT Vehicle_Vehicle_Interval_fk FOREIGN KEY (vehicleID) REFERENCES Vehicle (vehicleID)
+);
 
 /*-------------------------------------------------------------------
 Vehicle_Maintenance
