@@ -1,3 +1,6 @@
+/******************************************************************************************************************************
+*	Triggers and Stored Procedures
+******************************************************************************************************************************/
 /*
 	Calculate Premier monthly payment for a given vehicle owner for a given year
 		-miles driven per year to find maintenance intervals that will occur, sum up costs and subtract 5%
