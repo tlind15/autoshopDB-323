@@ -79,7 +79,7 @@ CREATE TABLE Individual (
         REFERENCES Customer (custID),
     CONSTRAINT ZipArea_Individual_fk FOREIGN KEY (zipcode)
         REFERENCES ZipArea (zipcode),
-    CONSTRAINT Individual_ck UNIQUE (firstName , lastName , street)
+    CONSTRAINT Individual_ck UNIQUE (name , street)
 );
 
  /*------------------------------------------------------------------
