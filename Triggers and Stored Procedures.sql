@@ -9,8 +9,7 @@
 CREATE TRIGGER Premier_Monthly_Payment_event
 BEFORE UPDATE On Premier
  begin
- 	if(old.month)
- 	paymentTotal := paymentTotal - paymentTotal * .05;
+ 	
 end
 /*
 	-If Steady/Premier uses points on their visit
