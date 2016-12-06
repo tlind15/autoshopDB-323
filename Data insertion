@@ -1,0 +1,630 @@
+/*Employee data insertion-----------------
+
+------------------------------------------*/
+INSERT INTO Employee_Type (type)
+	values ('Service Technician');
+    
+INSERT INTO Employee_Type (type)
+	values ('Mechanic');
+
+INSERT INTO Employee_Type(type)
+	values ('Service Technician and Mechanic');
+
+INSERT INTO Employee ( type, firstName, lastName, phone)
+	values (  'Service Technician','Tom', 'Jeep','310-890-1010');
+INSERT INTO Employee ( type, firstName, lastName, phone)
+	values (  'Service Technician and Mechanic','Jerry', 'Austin','319-990-2020');
+INSERT INTO Employee ( type, firstName, lastName, phone)
+	values (  'Service Technician','Bob', 'Jhonson','311-990-1010');
+INSERT INTO Employee ( type, firstName, lastName, phone)
+	values (  'Mechanic','Gerry', 'Cody','318-890-2020');
+INSERT INTO Employee ( type, firstName, lastName, phone)
+	values (  'Service Technician','Chris', 'bomb','312-330-1234');
+INSERT INTO Employee ( type, firstName, lastName, phone)
+	values (  'Mechanic','Ohm', 'rubby','333-888-7777');
+INSERT INTO Employee ( type, firstName, lastName, phone)
+	values (  'Service Technician','Easy', 'Life','390-882-9786');
+INSERT INTO Employee ( type, firstName, lastName, phone)
+	values (  'Mechanic','Hard', 'Life','410-188-3636');
+
+
+    
+
+
+INSERT INTO Skill (skillName)
+	values ('Oil change');
+INSERT INTO Skill (skillName)
+	values ('Engin check');
+INSERT INTO Skill (skillName)
+	values ('Tire change');
+INSERT INTO Skill (skillName)
+	values ('Tire balance check');
+INSERT INTO Skill (skillName)
+	values ('Bumper fix');
+INSERT INTO Skill (skillName)
+	values ('Head light fix');
+INSERT INTO Skill (skillName)
+	values ('Windshield repair');
+
+INSERT INTO Certification(name,skill)
+	values ('Certification of Oil change','Oil change');
+
+INSERT INTO Certification(name,skill)
+	values ('Certification of Engin check','Engin check');
+    
+INSERT INTO Certification(name,skill)
+	values ('Certification of Tire balance check','Tire balance check');
+
+INSERT INTO Certification(name,skill)
+	values ('Certification of Bumper fix','Bumper fix');
+    
+INSERT INTO Certification(name,skill)
+	values ('Certification of Head light fix','Head light fix');
+
+INSERT INTO Certification(name,skill)
+	values ('Certification of Windshield repair','Windshield repair');
+
+
+
+INSERT INTO Certified_Mechanic(employeeID)
+	values (2);
+INSERT INTO Certified_Mechanic(employeeID)
+	values (4);
+INSERT INTO certified_mechanic(employeeID)
+	values (6);
+
+INSERT INTO Specific_Cert(employeeID,cert_name)
+	values (2,'Certification of Tire balance check');
+
+INSERT INTO Specific_Cert(employeeID,cert_name)
+	values (2,'Certification of Bumper fix');
+
+INSERT INTO Specific_Cert(employeeID,cert_name)
+	values (2,'Certification of Head light fix');
+
+INSERT INTO Specific_Cert(employeeID,cert_name)
+	values (2,'Certification of Windshield repair');
+
+INSERT INTO Specific_Cert(employeeID,cert_name)
+	values (4,'Certification of Engin check');
+
+INSERT INTO Specific_Cert(employeeID,cert_name)
+	values (4,'Certification of Oil change');
+
+INSERT INTO Specific_Cert(employeeID,cert_name)
+	values (4,'Certification of Tire balance check');
+
+
+
+
+INSERT INTO Mechanic_Skill(skill,employeeID)
+	values ('Oil change',2);
+INSERT INTO Mechanic_Skill(skill,employeeID)
+	values ('Tire balance check',2);
+INSERT INTO Mechanic_Skill(skill,employeeID)
+	values ('Bumper fix',2);
+INSERT INTO Mechanic_Skill(skill,employeeID)
+	values ('Head light fix',2);
+INSERT INTO Mechanic_Skill(skill,employeeID)
+	values ('Windshield repair',2);
+INSERT INTO Mechanic_Skill(skill,employeeID)
+	values ('Windshield repair',8);
+INSERT INTO Mechanic_Skill(skill, employeeID)
+	values ('Engin check',4);
+INSERT INTO Mechanic_Skill(skill, employeeID)
+	values ('Oil change',4);
+INSERT INTO Mechanic_Skill(skill, employeeID)
+	values ('Tire balance check',6);
+
+    
+    
+
+INSERT INTO Mentorship (mentorSkill,mentorEmployeeID,employeeID)
+	values ('Oil change',2,6);
+
+INSERT INTO Mentorship (mentorSkill,mentorEmployeeID,employeeID)
+	values ('Oil change',2,4);
+
+INSERT INTO Mentorship (mentorSkill,mentorEmployeeID,employeeID)
+	values ('Engin check',4,6);
+    
+INSERT INTO Mentorship (mentorSkill,mentorEmployeeID,employeeID)
+	values ('Windshield repair',8,6);
+
+INSERT INTO Benefits_Tier (tierNumber,vacationPerHourRate,sickPerHourRate,minYearsOnJob)
+	values (1,0.1,0.1,1);
+
+INSERT INTO Benefits_Tier (tierNumber,vacationPerHourRate,sickPerHourRate,minYearsOnJob)
+	values (2,0.3,0.3,3);
+
+INSERT INTO Benefits_Tier (tierNumber,vacationPerHourRate,sickPerHourRate,minYearsOnJob)
+	values (3,0.5,0.5,5);
+
+INSERT INTO Present (startDate,tierNumber,employeeID)
+	values ('2010-10-10',3,2);
+
+INSERT INTO Hours_per_Year(employeeID,year,hoursWorked)
+	values (2,2010,1900);
+
+INSERT INTO Retirement_Tier(tierNumber,baseDollarRate,minYearsOnJob)
+	values (1,1,10);
+
+INSERT INTO Retirement_Tier(tierNumber,baseDollarRate,minYearsOnJob)
+	values (2,2,30);
+
+INSERT INTO Retirement_Tier(tierNumber,baseDollarRate,minYearsOnJob)
+	values (3,3,50);
+
+
+INSERT INTO Safety_Class(date,classNumber)
+	values ('2016-3-12',1);
+
+INSERT INTO Safety_Class(date,classNumber)
+	values ('2016-9-12',2);
+
+
+INSERT INTO Safety_Class_Attendee(employeeID,classDate)
+	values (2,'2016-3-12');
+INSERT INTO Safety_Class_Attendee(employeeID,classDate)
+	values (1,'2016-3-12');
+INSERT INTO Safety_Class_Attendee(employeeID,classDate)
+	values (3,'2016-3-12');
+INSERT INTO Safety_Class_Attendee(employeeID,classDate)
+	values (4,'2016-3-12');
+INSERT INTO Safety_Class_Attendee(employeeID,classDate)
+	values (5,'2016-9-12');
+INSERT INTO Safety_Class_Attendee(employeeID,classDate)
+	values (6,'2016-9-12');
+INSERT INTO Safety_Class_Attendee(employeeID,classDate)
+	values (7,'2016-9-12');
+INSERT INTO Safety_Class_Attendee(employeeID,classDate)
+	values (8,'2016-9-12');
+
+INSERT INTO Employee_of_The_Month(month,year,employeeID)
+	values (12,2016,2);
+INSERT INTO Employee_of_The_Month(month,year,employeeID)
+	values (11,2016,2);
+INSERT INTO Employee_of_The_Month(month,year,employeeID)
+	values (10,2016,2);
+INSERT INTO Employee_of_The_Month(month,year,employeeID)
+	values (9,2016,2);
+INSERT INTO Employee_of_The_Month(month,year,employeeID)
+	values (8,2016,2);
+
+
+INSERT INTO Reward(name,description)
+	values ('Best Mechanic of the month','One Nike Shoes');
+
+INSERT INTO Reward(name,description)
+	values ('Best Service Technician of the month','One Nike Shoes');
+
+
+INSERT INTO Employee_Reward(rewardName,monthAwarded,yearAwarded,employeeID)
+	values ('Best Mechanic of the month',8,2016,2);
+INSERT INTO Employee_Reward(rewardName,monthAwarded,yearAwarded,employeeID)
+	values ('Best Mechanic of the month',9,2016,2);
+INSERT INTO Employee_Reward(rewardName,monthAwarded,yearAwarded,employeeID)
+	values ('Best Service Technician of the month',10,2016,2);
+INSERT INTO Employee_Reward(rewardName,monthAwarded,yearAwarded,employeeID)
+	values ('Best Mechanic of the month',11,2016,2);
+INSERT INTO Employee_Reward(rewardName,monthAwarded,yearAwarded,employeeID)
+	values ('Best Service Technician of the month',12,2016,2);
+    
+
+/*Employee data insertion end-----------------
+
+------------------------------------------*/
+
+/*Customer, Email and Vehicle data insertion-----------------
+
+------------------------------------------*/
+INSERT INTO Customer( phone, email)
+	values ('110-120-1234','JK@gmail.com');
+
+INSERT INTO Customer( phone, email)
+	values ('111-120-1234','OK@gmail.com');
+
+INSERT INTO Customer( phone, email)
+	values ('112-120-1234','IK@gmail.com');
+    
+INSERT INTO Customer( phone, email)
+	values ('113-120-1234','PK@gmail.com');
+
+INSERT INTO Customer( phone, email)
+	values ('114-120-1234','YK@gmail.com');
+
+INSERT INTO Customer( phone, email)
+	values ('115-120-1234','LK@gmail.com');  
+
+INSERT INTO Customer( phone, email)
+	values ('116-120-1234','TK@gmail.com');    
+
+INSERT INTO Customer( phone, email)
+	values ('117-120-1234','RK@gmail.com');
+
+INSERT INTO Customer( phone, email)
+	values ('888-120-1234','AAA@gmail.com');
+
+INSERT INTO Customer( phone, email)
+	values ('800-120-1234','BBB@gmail.com');
+    
+
+INSERT INTO ZipArea(zipcode,city,state)
+	values (90505,'Torrance','CA');
+INSERT INTO ZipArea(zipcode,city,state)
+	values (90503,'Gardena','CA');
+INSERT INTO ZipArea(zipcode,city,state)
+	values (90101,'Los Angeles','CA');
+INSERT INTO ZipArea(zipcode,city,state)
+	values (90102,'Pasadena','CA');
+
+
+INSERT INTO Individual(custID,name,street,zipcode)
+	values (1,'Jhon Kappa','Lomita',90505);
+
+INSERT INTO Individual(custID,name,street,zipcode)
+	values (2,'Ohm Karma','Lomita',90505);
+    
+INSERT INTO Individual(custID,name,street,zipcode)
+	values (3,'Ivan Kooper','8th',90101);
+    
+INSERT INTO Individual(custID,name,street,zipcode)
+	values (4,'Park Koo','4th',90101);
+    
+INSERT INTO Individual(custID,name,street,zipcode)
+	values (5,'Yoon Kama','Diamond',90102);
+    
+INSERT INTO Individual(custID,name,street,zipcode)
+	values (6,'Luthor Kingdom','Gardena',90503);
+
+INSERT INTO Individual(custID,name,street,zipcode)
+	values (7,'Tinker Kyle','Pico',90101);
+    
+INSERT INTO Individual(custID,name,street,zipcode)
+	values (8,'Ruin Kim','PCH',90505);
+
+INSERT INTO Business(custID,name)
+	values (9,'AAA corp');
+
+INSERT INTO Business(custID,name)
+	values (10,'BBB corp');
+
+
+INSERT INTO Address(custID,street,zipcode,addressType)
+	values (8,'Western',90505,'Company');
+
+
+INSERT INTO Address(custID,street,zipcode,addressType)
+	values (9,'6th',90101,'Company');
+
+INSERT INTO Email(date)
+	values ('2016-10-10');
+INSERT INTO Email(date)
+	values ('2013-10-10');
+INSERT INTO Email(date)
+	values ('2014-10-10');
+INSERT INTO Email(date)
+	values ('2016-12-13');
+INSERT INTO Email(date)
+	values ('2016-12-12');
+
+
+
+
+INSERT INTO Referred(custID)
+	values (1);
+
+INSERT INTO Referred(custID)
+	values (2);
+
+INSERT INTO Referred(custID)
+	values (3);
+
+INSERT INTO Premier(custID,registerDate,points,ReferredBenefitsUsed)
+	values (4,'2016-10-10',300,100);
+    
+INSERT INTO Premier(custID,registerDate,points,ReferredBenefitsUsed)
+	values (6,'2013-10-10',3000,1000);
+
+INSERT INTO Premier(custID,registerDate,points,ReferredBenefitsUsed)
+	values (1,'2016-11-10',0,0);
+    
+INSERT INTO Premier(custID,registerDate,points,ReferredBenefitsUsed)
+	values (2,'2013-11-10',0,0);
+
+INSERT INTO Premier_Payment(custID,month,year,paymentTotal)
+	values (4,10,16,1200);
+    
+INSERT INTO Premier_Payment(custID,month,year,paymentTotal)
+	values (6,10,13,1200);
+    
+INSERT INTO Premier_Payment(custID,month,year,paymentTotal)
+	values (1,10,16,1200);
+    
+INSERT INTO Premier_Payment(custID,month,year,paymentTotal)
+	values (2,10,13,1200);
+
+INSERT INTO Steady(custID,registerDate,points,ReferredBenefitsUsed)
+	values (5,'2015-10-10',100,0);
+
+INSERT INTO Steady(custID,registerDate,points,ReferredBenefitsUsed)
+	values (7,'2012-10-10',10000,0);
+
+INSERT INTO Steady(custID,registerDate,points,ReferredBenefitsUsed)
+	values (3,'2015-11-10',0,0);
+
+
+
+INSERT INTO Referred_by_Premier(custID,referredByID,referredDate)
+	values (1,4,'2016-11-10');
+
+INSERT INTO Referred_by_Premier(custID,referredByID,referredDate)
+	values (2,4,'2016-12-10');
+
+INSERT INTO Referred_by_Steady(custID,referredByID,referredDate)
+	values (3,5,'2015-11-10');
+
+INSERT INTO Prospective(custID)
+	values (8);
+
+INSERT INTO Prospective(custID)
+	values (9);
+
+    
+INSERT INTO Vehicle(make,model,year) -- customer 4 vehicle 1
+	values ('Lexus','RX350',2015);
+INSERT INTO Vehicle(make,model,year) -- customer 5 vehicle 2
+	values ('Lexus','RX350',2013);
+INSERT INTO Vehicle(make,model,year) -- customer 1 vehicle 3
+	values ('Toyota','Camry',2010);
+INSERT INTO Vehicle(make,model,year) -- customer 2 vehicle 4
+	values ('Toyota','Camry',2011);
+INSERT INTO Vehicle(make,model,year) -- customer 3 vehicle 5
+	values ('Toyota','Camry',2012);
+INSERT INTO Vehicle(make,model,year) -- customer 6 vehicle 6
+	values ('Honda','Accord',2010);
+INSERT INTO Vehicle(make,model,year) -- customer 7 vehicle 7
+	values ('Honda','Accord',2011);
+INSERT INTO Vehicle(make,model,year) -- customer 8 vehicle 8
+	values ('BMW','M4',2015);
+INSERT INTO Vehicle(make,model,year) -- customer 9 vehicle 9
+	values ('BMW','M3',2015);
+
+INSERT INTO Vehicle_Owner(custID,vehicleID,licensePlate,startMileage,milesPerYear)
+	values (4,1,'19MXDB',10000,5000);
+INSERT INTO Vehicle_Owner(custID,vehicleID,licensePlate,startMileage,milesPerYear)
+	values (5,2,'20MXDB',20000,7000);
+INSERT INTO Vehicle_Owner(custID,vehicleID,licensePlate,startMileage,milesPerYear)
+	values (1,3,'21MXDB',30000,5000);
+INSERT INTO Vehicle_Owner(custID,vehicleID,licensePlate,startMileage,milesPerYear)
+	values (2,4,'22MXDB',30000,5000);
+INSERT INTO Vehicle_Owner(custID,vehicleID,licensePlate,startMileage,milesPerYear)
+	values (3,5,'23MXDB',40000,7000);
+INSERT INTO Vehicle_Owner(custID,vehicleID,licensePlate,startMileage,milesPerYear)
+	values (6,6,'24MXDB',10000,5000);
+INSERT INTO Vehicle_Owner(custID,vehicleID,licensePlate,startMileage,milesPerYear)
+	values (7,7,'25MXDB',10000,7000);
+INSERT INTO Vehicle_Owner(custID,vehicleID,licensePlate,startMileage,milesPerYear)
+	values (8,8,'26MXDB',8000,3000);
+INSERT INTO Vehicle_Owner(custID,vehicleID,licensePlate,startMileage,milesPerYear)
+	values (9,9,'27MXDB',9000,3000);
+
+INSERT INTO Vehicle_Interval(vehicleID,milesDriven)
+	values (1,4500);
+INSERT INTO Vehicle_Interval(vehicleID,milesDriven)
+	values (2,4500);
+INSERT INTO Vehicle_Interval(vehicleID,milesDriven)
+	values (3,3000);
+INSERT INTO Vehicle_Interval(vehicleID,milesDriven)
+	values (4,3000);
+INSERT INTO Vehicle_Interval(vehicleID,milesDriven)
+	values (5,3000);
+INSERT INTO Vehicle_Interval(vehicleID,milesDriven)
+	values (6,3200);
+INSERT INTO Vehicle_Interval(vehicleID,milesDriven)
+	values (7,3200);
+INSERT INTO Vehicle_Interval(vehicleID,milesDriven)
+	values (8,1500);
+INSERT INTO Vehicle_Interval(vehicleID,milesDriven)
+	values (9,1500);
+
+INSERT INTO Steady_Email(custID,vehicleID,date)
+	values (5,2,'2016-10-10');
+
+INSERT INTO Steady_Email(custID,vehicleID,date)
+	values (7,7,'2013-10-10');
+
+INSERT INTO Steady_Email(custID,vehicleID,date)
+	values (3,5,'2014-10-10');
+
+INSERT INTO maintenance_item(mName,laborHours)
+	values ('Oil change',2);
+INSERT INTO maintenance_item(mName,laborHours)
+	values ('Tire balance check',3);
+    
+
+INSERT INTO Prospective_Email(custID,date,itemSpecial)
+	values (8,'2016-12-12','Oil change');
+
+INSERT INTO Prospective_Email(custID,date,itemSpecial)
+	values (9,'2016-12-13','Tire balance check');
+
+
+INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
+	values (1,'Oil change',80);
+INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
+	values (1,'Tire balance check',50);
+    
+INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
+	values (2,'Oil change',80);
+INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
+	values (2,'Tire balance check',50);
+    
+INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
+	values (3,'Oil change',30);
+INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
+	values (3,'Tire balance check',10);
+    
+INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
+	values (4,'Oil change',30);
+INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
+	values (4,'Tire balance check',10);
+    
+INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
+	values (5,'Oil change',30);
+INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
+	values (5,'Tire balance check',10);
+    
+INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
+	values (6,'Oil change',25);
+INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
+	values (6,'Tire balance check',15);
+    
+INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
+	values (7,'Oil change',25);
+INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
+	values (7,'Tire balance check',15);
+    
+INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
+	values (8,'Tire balance check',100);
+INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
+	values (8,'Oil change',200);
+    
+INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
+	values (9,'Tire balance check',100);
+INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
+	values (9,'Oil change',200);
+--   ------------
+
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (1,'Oil change',4500);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (2,'Oil change',4500);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (3,'Oil change',3000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (3,'Tire balance check',3000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (4,'Oil change',3000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (5,'Oil change',3000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (6,'Oil change',3200);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (7,'Oil change',3200);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (8,'Oil change',1500);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (9,'Oil change',1500);
+/*Customer, Email and Vehicle data insertion end-----------------
+
+------------------------------------------*/
+
+/*Visit data insertion-----------------
+
+------------------------------------------*/
+INSERT INTO Visit(ST_ID,custID,vehicleID,date,pointsUsed)
+	values (1,1,3,'2016-12-10',0);
+
+INSERT INTO Visit(ST_ID,custID,vehicleID,date,pointsUsed)
+	values (3,4,1,'2016-12-10',0);
+
+INSERT INTO Visit(ST_ID,custID,vehicleID,date,pointsUsed)
+	values (5,5,2,'2016-12-10',0);
+
+INSERT INTO Visit(ST_ID,custID,vehicleID,date,pointsUsed)
+	values (7,8,8,'2016-12-10',0);
+
+
+INSERT INTO Maintenance_Pack_Item(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,numMiles,finalCost)
+	values (4,1,1,'2016-12-10',3,'Oil change',3000,30);
+
+INSERT INTO Maintenance_Pack_Item(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,numMiles,finalCost)
+	values (6,1,1,'2016-12-10',3,'Tire balance check',3000,10);
+
+INSERT INTO Maintenance_Pack_Item(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,numMiles,finalCost)
+	values (4,3,4,'2016-12-10',1,'Oil change',4500,80);
+
+INSERT INTO Maintenance_Pack_Item(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,numMiles,finalCost)
+	values (4,5,5,'2016-12-10',2,'Oil change',4500,80);
+
+INSERT INTO Maintenance_Pack_Item(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,numMiles,finalCost)
+	values (4,7,8,'2016-12-10',8,'Oil change',1500,200);
+
+
+INSERT INTO maintenance_item_work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
+	values (4,1,1,'2016-12-10',3,'Oil change',30);
+
+INSERT INTO maintenance_item_work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
+	values (6,1,1,'2016-12-10',3,'Tire balance check',10);
+
+INSERT INTO maintenance_item_work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
+	values (4,3,4,'2016-12-10',1,'Oil change',80);
+
+INSERT INTO maintenance_item_work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
+	values (4,5,5,'2016-12-10',2,'Oil change',80);
+	
+INSERT INTO maintenance_item_work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
+	values (4,7,8,'2016-12-10',8,'Oil change',200);
+/*Visit data insertion end-----------------
+
+------------------------------------------*/
+
+/*Part,Supplier and Merchandise data insertion-----------------
+
+------------------------------------------*/
+INSERT INTO part(name)
+	values ('Motor Oil');
+INSERT INTO part(name)
+	values ('Tires');
+
+INSERT INTO supplier(name,email,phone)
+	values ('amoa','amoa@gmail.com','666-544-1234');
+INSERT INTO supplier(name,email,phone)
+	values ('we are the best','best@gmail.com','777-777-7777');
+
+
+
+INSERT INTO part_order(partName,supplierName,date,quantity,priceForOne)
+	values ('Motor Oil','amoa','2010-10-10',200,20);
+
+INSERT INTO part_order(partName,supplierName,date,quantity,priceForOne)
+	values ('Tires','we are the best','2010-10-10',400,50);
+
+INSERT INTO part_at_daves(orderedFromID,serialNum)
+	values (1,000001);
+
+INSERT INTO part_at_daves(orderedFromID,serialNum)
+	values (3,000002);
+
+INSERT INTO part_maintenance(mName,partSerialNum,numOfPartNeeded)
+	values ('Oil change',000001,1);
+
+INSERT INTO part_maintenance(mName,partSerialNum,numOfPartNeeded)
+	values ('Tire balance check',000002,4);
+
+INSERT INTO merchandise(name)
+	values ('Coke');
+INSERT INTO merchandise(name)
+	values ('Arizona');
+
+INSERT INTO merchandise_item_order(supplierName,merchandiseItem,date,quantity,priceForOne)
+	values ('we are the best','Coke','2010-10-10',200,2);
+
+INSERT INTO merchandise_item_order(supplierName,merchandiseItem,date,quantity,priceForOne)
+	values ('we are the best','Arizona','2010-10-10',200,1);
+
+INSERT INTO merchandise_item_instore(orderedFromID,serialNum)
+	values (1,00001);
+INSERT INTO merchandise_item_instore(orderedFromID,serialNum)
+	values (2,00002);
+
+
+INSERT INTO merchandise_purchase(ST_ID,custID,date,vehicleID,itemSerialNum)
+	values (3,4,'2016-12-10',1,00001);
+
+INSERT INTO merchandise_purchase(ST_ID,custID,date,vehicleID,itemSerialNum)
+	values (3,4,'2016-12-10',1,00002);
+/*Part,Supplier and Merchandise data insertion end-----------------
+
+------------------------------------------*/
