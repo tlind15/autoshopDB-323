@@ -1,3 +1,12 @@
+INSERT INTO Employee_Type (type)
+	values ('Service Technician');
+    
+INSERT INTO Employee_Type (type)
+	values ('Mechanic');
+
+INSERT INTO Employee_Type(type)
+	values ('Service Technician and Mechanic');
+
 INSERT INTO Employee ( type, firstName, lastName, phone)
 	values (  'Service Technician','Tom', 'Jeep','310-890-1010');
 INSERT INTO Employee ( type, firstName, lastName, phone)
@@ -17,14 +26,7 @@ INSERT INTO Employee ( type, firstName, lastName, phone)
 
 
     
-INSERT INTO Employee_Type (type)
-	values ('Service Technician');
-    
-INSERT INTO Employee_Type (type)
-	values ('Mechanic');
 
-INSERT INTO Employee_Type(type)
-	values ('Service Technician and Mechanic');
 
 INSERT INTO Skill (skillName)
 	values ('Oil change');
@@ -60,6 +62,7 @@ INSERT INTO Certification(name,skill)
 	values ('Certification of Windshield repair','Windshield repair');
 
 
+
 INSERT INTO Certified_Mechanic(employeeID)
 	values (2);
 INSERT INTO Certified_Mechanic(employeeID)
@@ -80,6 +83,8 @@ INSERT INTO Specific_Cert(employeeID,cert_name)
 INSERT INTO Specific_Cert(employeeID,cert_name)
 	values (4,'Certification of Engin check');
 
+
+
 INSERT INTO Mechanic_Skill(skill,employeeID)
 	values ('Oil change',2);
 INSERT INTO Mechanic_Skill(skill,employeeID)
@@ -90,20 +95,18 @@ INSERT INTO Mechanic_Skill(skill,employeeID)
 	values ('Head light fix',2);
 INSERT INTO Mechanic_Skill(skill,employeeID)
 	values ('Windshield repair',2);
-
-
 INSERT INTO Mechanic_Skill(skill,employeeID)
 	values ('Windshield repair',8);
-
-
 INSERT INTO Mechanic_Skill(skill, employeeID)
 	values ('Engin check',4);
+    
+    
 
 INSERT INTO Mentorship (mentorSkill,mentorEmployeeID,employeeID)
 	values ('Oil change',2,6);
 
 INSERT INTO Mentorship (mentorSkill,mentorEmployeeID,employeeID)
-	values ('Oil change',2,6);
+	values ('Oil change',2,4);
 
 INSERT INTO Mentorship (mentorSkill,mentorEmployeeID,employeeID)
 	values ('Engin check',4,6);
@@ -189,8 +192,3 @@ INSERT INTO Employee_Reward(rewardName,monthAwarded,yearAwarded,employeeID)
 	values ('Best Mechanic of the month',11,2016,2);
 INSERT INTO Employee_Reward(rewardName,monthAwarded,yearAwarded,employeeID)
 	values ('Best Service Technician of the month',12,2016,2);
-
-
-
-
-
