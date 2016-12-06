@@ -459,6 +459,16 @@ INSERT INTO maintenance_item(mName,laborHours)
 	values ('Oil change',2);
 INSERT INTO maintenance_item(mName,laborHours)
 	values ('Tire balance check',3);
+INSERT INTO maintenance_item(mName,laborHours)
+	values ('Transmission Fluid Flush',4);
+INSERT INTO maintenance_item(mName,laborHours)
+	values ('Power Steering Fluid Flush',3);
+INSERT INTO maintenance_item(mName,laborHours)
+	values ('Brake Pad Replacement',3);
+INSERT INTO maintenance_item(mName,laborHours)
+	values ('Spark Plug Replacement',3);
+INSERT INTO maintenance_item(mName,laborHours)
+	values ('Tire Replacement',2);
     
 
 INSERT INTO Prospective_Email(custID,date,itemSpecial)
