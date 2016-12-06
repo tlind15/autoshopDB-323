@@ -660,14 +660,15 @@ INSERT INTO Visit(ST_ID,custID,vehicleID,date,pointsUsed)
 	values (7,8,8,'2016-12-10',0);
 
 
+INSERT INTO Visit(ST_ID,custID,vehicleID,date,pointsUsed)
+	values (7,8,8,'2017-3-10',0);
 
-INSERT INTO Maintenance_Pack_Item(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,numMiles,finalCost)
-	values (6,1,1,'2016-12-10',3,'Tire balance check',3000,50);
+INSERT INTO Visit(ST_ID,custID,vehicleID,date,pointsUsed)
+	values (1,4,1,'2017-3-10',0);
 
 
 INSERT INTO Maintenance_Item_Work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
 	values (4,1,1,'2016-12-10',3,'Oil change',30);
-
 
 INSERT INTO Maintenance_Item_Work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
 	values (4,3,4,'2016-12-10',1,'Oil change',80);
@@ -677,6 +678,27 @@ INSERT INTO Maintenance_Item_Work(mechanicID,ST_ID,custID,date,vehicleID,maint_i
 	
 INSERT INTO Maintenance_Item_Work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
 	values (4,7,8,'2016-12-10',8,'Oil change',200);
+
+
+INSERT INTO Maintenance_Item_Work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
+	values (4,7,8,'2017-3-10',8,'Oil change',200);
+    
+
+INSERT INTO Maintenance_Pack_Item(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,numMiles,finalCost)
+	values (6,1,4,'2017-3-10',1,'Oil change',10000,80);
+
+INSERT INTO Maintenance_Pack_Item(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,numMiles,finalCost)
+	values (4,1,4,'2017-3-10',1,'Brake Pad Replacement',10000,160);
+
+INSERT INTO Maintenance_Pack_Item(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,numMiles,finalCost)
+	values (8,1,4,'2017-3-10',1,'Transmission Fluid Flush',10000,50);
+
+
+
+
+
+    
+
 /*Visit data insertion end-----------------
 
 ------------------------------------------*/
@@ -761,6 +783,26 @@ INSERT INTO Part_Maintenance(mName,partSerialNum,numOfPartNeeded)
 
 INSERT INTO Part_Maintenance(mName,partSerialNum,numOfPartNeeded)
 	values ('Tire balance check',000002,4);
+
+INSERT INTO Part_Maintenance(mName,partSerialNum,numOfPartNeeded)
+	values ('Oil change',000003,1);
+
+INSERT INTO Part_Maintenance(mName,partSerialNum,numOfPartNeeded)
+	values ('Tire balance check',000004,1);
+
+INSERT INTO Part_Maintenance(mName,partSerialNum,numOfPartNeeded)
+	values ('Oil change',000005,1);
+
+INSERT INTO Part_Maintenance(mName,partSerialNum,numOfPartNeeded)
+	values ('Tire balance check',000006,1);
+
+INSERT INTO Part_Maintenance(mName,partSerialNum,numOfPartNeeded)
+	values ('Oil change',000007,1);
+
+INSERT INTO Part_Maintenance(mName,partSerialNum,numOfPartNeeded)
+	values ('Tire balance check',000008,1);
+
+
 
 INSERT INTO Merchandise(name)
 	values ('Coke');
