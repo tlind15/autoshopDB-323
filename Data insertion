@@ -576,6 +576,12 @@ INSERT INTO part(name)
 	values ('Motor Oil');
 INSERT INTO part(name)
 	values ('Tires');
+INSERT INTO part(name)
+	values ('Power Steering Fluid');
+INSERT INTO part(name)
+	values ('Brake Pad');
+INSERT INTO part(name)
+	values ('Spark Plug');
 
 INSERT INTO supplier(name,email,phone)
 	values ('amoa','amoa@gmail.com','666-544-1234');
@@ -594,6 +600,24 @@ INSERT INTO part_order(partName,supplierName,date,quantity,priceForOne)
 
 INSERT INTO part_order(partName,supplierName,date,quantity,priceForOne)
 	values ('Tires','we are the best','2010-10-10',400,50);
+	
+INSERT INTO part_order(partName,supplierName,date,quantity,priceForOne)
+	values ('Transmission Fluid','we are not the worst','2016-10-14',100,30);
+
+INSERT INTO part_order(partName,supplierName,date,quantity,priceForOne)
+	values ('Tires','emotional','2015-12-29',400,55);
+
+INSERT INTO part_order(partName,supplierName,date,quantity,priceForOne)
+	values ('Power Steering Fluid','amoa','2016-1-19',250,25);
+
+INSERT INTO part_order(partName,supplierName,date,quantity,priceForOne)
+	values ('Brake Pads','we are the best','2016-4-18',100,75);
+	
+INSERT INTO part_order(partName,supplierName,date,quantity,priceForOne)
+	values ('Spark Plugs','we are the best','2016-5-6',100,100);
+
+INSERT INTO part_order(partName,supplierName,date,quantity,priceForOne)
+	values ('Motor Oil','emotional','2016-8-30',400,22);
 
 INSERT INTO part_at_daves(orderedFromID,serialNum)
 	values (1,000001);
