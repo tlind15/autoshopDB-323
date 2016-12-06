@@ -70,7 +70,7 @@ INSERT INTO Certified_Mechanic(employeeID)
 	values (2);
 INSERT INTO Certified_Mechanic(employeeID)
 	values (4);
-INSERT INTO certified_mechanic(employeeID)
+INSERT INTO Certified_Mechanic(employeeID)
 	values (6);
 
 INSERT INTO Specific_Cert(employeeID,cert_name)
@@ -458,19 +458,19 @@ INSERT INTO Steady_Email(custID,vehicleID,date)
 INSERT INTO Steady_Email(custID,vehicleID,date)
 	values (3,5,'2014-10-10');
 
-INSERT INTO maintenance_item(mName,laborHours)
+INSERT INTO Maintenance_Item(mName,laborHours)
 	values ('Oil change',2);
-INSERT INTO maintenance_item(mName,laborHours)
+INSERT INTO Maintenance_Item(mName,laborHours)
 	values ('Tire balance check',3);
-INSERT INTO maintenance_item(mName,laborHours)
+INSERT INTO Maintenance_Item(mName,laborHours)
 	values ('Transmission Fluid Flush',4);
-INSERT INTO maintenance_item(mName,laborHours)
+INSERT INTO Maintenance_Item(mName,laborHours)
 	values ('Power Steering Fluid Flush',3);
-INSERT INTO maintenance_item(mName,laborHours)
+INSERT INTO Maintenance_Item(mName,laborHours)
 	values ('Brake Pad Replacement',3);
-INSERT INTO maintenance_item(mName,laborHours)
+INSERT INTO Maintenance_Item(mName,laborHours)
 	values ('Spark Plug Replacement',3);
-INSERT INTO maintenance_item(mName,laborHours)
+INSERT INTO Maintenance_Item(mName,laborHours)
 	values ('Tire Replacement',2);
     
 
@@ -676,19 +676,19 @@ INSERT INTO Maintenance_Pack_Item(mechanicID,ST_ID,custID,date,vehicleID,maint_i
 	values (4,7,8,'2016-12-10',8,'Oil change',1500,200);
 
 
-INSERT INTO maintenance_item_work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
+INSERT INTO Maintenance_Item_Work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
 	values (4,1,1,'2016-12-10',3,'Oil change',30);
 
-INSERT INTO maintenance_item_work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
+INSERT INTO Maintenance_Item_Work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
 	values (6,1,1,'2016-12-10',3,'Tire balance check',10);
 
-INSERT INTO maintenance_item_work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
+INSERT INTO Maintenance_Item_Work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
 	values (4,3,4,'2016-12-10',1,'Oil change',80);
 
-INSERT INTO maintenance_item_work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
+INSERT INTO Maintenance_Item_Work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
 	values (4,5,5,'2016-12-10',2,'Oil change',80);
 	
-INSERT INTO maintenance_item_work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
+INSERT INTO Maintenance_Item_Work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
 	values (4,7,8,'2016-12-10',8,'Oil change',200);
 /*Visit data insertion end-----------------
 
@@ -697,89 +697,86 @@ INSERT INTO maintenance_item_work(mechanicID,ST_ID,custID,date,vehicleID,maint_i
 /*Part,Supplier and Merchandise data insertion-----------------
 
 ------------------------------------------*/
-INSERT INTO part(name)
+INSERT INTO Part(name)
 	values ('Motor Oil');
-INSERT INTO part(name)
+INSERT INTO Part(name)
 	values ('Tires');
-INSERT INTO part(name)
+INSERT INTO Part(name)
 	values ('Power Steering Fluid');
-INSERT INTO part(name)
+INSERT INTO Part(name)
 	values ('Brake Pad');
-INSERT INTO part(name)
+INSERT INTO Part(name)
 	values ('Spark Plug');
-INSERT INTO part(name)
+INSERT INTO Part(name)
 	values ('Transmission Fluid');
 
-INSERT INTO supplier(name,email,phone)
+INSERT INTO Supplier(name,email,phone)
 	values ('amoa','amoa@gmail.com','666-544-1234');
-INSERT INTO supplier(name,email,phone)
+INSERT INTO Supplier(name,email,phone)
 	values ('we are the best','best@gmail.com','777-777-7777');
-INSERT INTO supplier(name,email,phone)
+INSERT INTO Supplier(name,email,phone)
 	values ('we are not the worst','notworst@gmail.com','888-888-8888');
-INSERT INTO supplier(name,email,phone)
+INSERT INTO Supplier(name,email,phone)
 	values ('emotional','emotional@gmail.com','999-999-9999');
 
 
-INSERT INTO part_order(partName,supplierName,date,quantity,priceForOne)
+INSERT INTO Part_Order(partName,supplierName,date,quantity,priceForOne)
 	values ('Motor Oil','amoa','2010-10-10',200,20);
 
-INSERT INTO part_order(partName,supplierName,date,quantity,priceForOne)
+INSERT INTO Part_Order(partName,supplierName,date,quantity,priceForOne)
 	values ('Tires','we are the best','2010-10-10',400,50);
     
-INSERT INTO part_order(partName,supplierName,date,quantity,priceForOne)
+INSERT INTO Part_Order(partName,supplierName,date,quantity,priceForOne)
 	values ('Transmission Fluid','we are not the worst','2016-10-14',100,30);
     
-INSERT INTO part_order(partName,supplierName,date,quantity,priceForOne)
+INSERT INTO Part_Order(partName,supplierName,date,quantity,priceForOne)
 	values ('Tires','emotional','2015-12-29',400,55);
 
-INSERT INTO part_order(partName,supplierName,date,quantity,priceForOne)
-	values ('Tires','emotional','2015-12-29',400,55);
-
-INSERT INTO part_order(partName,supplierName,date,quantity,priceForOne)
+INSERT INTO Part_Order(partName,supplierName,date,quantity,priceForOne)
 	values ('Power Steering Fluid','amoa','2016-1-19',250,25);
 
-INSERT INTO part_order(partName,supplierName,date,quantity,priceForOne) 
+INSERT INTO Part_Order(partName,supplierName,date,quantity,priceForOne) 
 	values ('Brake Pad','we are the best','2016-4-18',100,75);
 	
-INSERT INTO part_order(partName,supplierName,date,quantity,priceForOne) 
+INSERT INTO Part_Order(partName,supplierName,date,quantity,priceForOne) 
 	values ('Spark Plug','we are the best','2016-5-6',100,100);
 
-INSERT INTO part_order(partName,supplierName,date,quantity,priceForOne) 
+INSERT INTO Part_Order(partName,supplierName,date,quantity,priceForOne) 
 	values ('Motor Oil','emotional','2016-8-30',400,22);
 
-INSERT INTO part_at_daves(orderedFromID,serialNum)
+INSERT INTO Part_At_Daves(orderedFromID,serialNum)
 	values (1,000001);
 
-INSERT INTO part_at_daves(orderedFromID,serialNum)
+INSERT INTO Part_At_Daves(orderedFromID,serialNum)
 	values (2,000002);
 
-INSERT INTO part_maintenance(mName,partSerialNum,numOfPartNeeded)
+INSERT INTO Part_Maintenance(mName,partSerialNum,numOfPartNeeded)
 	values ('Oil change',000001,1);
 
-INSERT INTO part_maintenance(mName,partSerialNum,numOfPartNeeded)
+INSERT INTO Part_Maintenance(mName,partSerialNum,numOfPartNeeded)
 	values ('Tire balance check',000002,4);
 
-INSERT INTO merchandise(name)
+INSERT INTO Merchandise(name)
 	values ('Coke');
-INSERT INTO merchandise(name)
+INSERT INTO Merchandise(name)
 	values ('Arizona');
 
-INSERT INTO merchandise_item_order(supplierName,merchandiseItem,date,quantity,priceForOne)
+INSERT INTO Merchandise_Item_Order(supplierName,merchandiseItem,date,quantity,priceForOne)
 	values ('we are the best','Coke','2010-10-10',200,2);
 
-INSERT INTO merchandise_item_order(supplierName,merchandiseItem,date,quantity,priceForOne)
+INSERT INTO Merchandise_Item_Order(supplierName,merchandiseItem,date,quantity,priceForOne)
 	values ('we are the best','Arizona','2010-10-10',200,1);
 
-INSERT INTO merchandise_item_instore(orderedFromID,serialNum)
+INSERT INTO Merchandise_Item_Instore(orderedFromID,serialNum)
 	values (1,00001);
-INSERT INTO merchandise_item_instore(orderedFromID,serialNum)
+INSERT INTO Merchandise_Item_Instore(orderedFromID,serialNum)
 	values (2,00002);
 
 
-INSERT INTO merchandise_purchase(ST_ID,custID,date,vehicleID,itemSerialNum)
+INSERT INTO Merchandise_Purchase(ST_ID,custID,date,vehicleID,itemSerialNum)
 	values (3,4,'2016-12-10',1,00001);
 
-INSERT INTO merchandise_purchase(ST_ID,custID,date,vehicleID,itemSerialNum)
+INSERT INTO Merchandise_Purchase(ST_ID,custID,date,vehicleID,itemSerialNum)
 	values (3,4,'2016-12-10',1,00002);
 /*Part,Supplier and Merchandise data insertion end-----------------
 
