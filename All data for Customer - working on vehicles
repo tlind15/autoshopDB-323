@@ -1,0 +1,181 @@
+INSERT INTO Maintenance_Item(mName,laborHours)
+	values ('Oil change',2);
+INSERT INTO Maintenance_Item(mName,laborHours)
+	values ('Tire balance check',3);
+
+
+INSERT INTO Vehicle(make,model,year) -- customer 4 vehicle 19
+	values ('Lexus','RX350',2015);
+INSERT INTO Vehicle(make,model,year) -- customer 5 vehicle 20
+	values ('Lexus','RX350',2013);
+INSERT INTO Vehicle(make,model,year) -- customer 1 vehicle 21
+	values ('Toyota','Camry',2010);
+INSERT INTO Vehicle(make,model,year) -- customer 2 vehicle 22
+	values ('Toyota','Camry',2011);
+INSERT INTO Vehicle(make,model,year) -- customer 3 vehicle 23
+	values ('Toyota','Camry',2012);
+INSERT INTO Vehicle(make,model,year) -- customer 6 vehicle 24
+	values ('Honda','Accord',2010);
+INSERT INTO Vehicle(make,model,year) -- customer 7 vehicle 25
+	values ('Honda','Accord',2011);
+INSERT INTO Vehicle(make,model,year) -- customer 8 vehicle 26
+	values ('BMW','M4',2015);
+INSERT INTO Vehicle(make,model,year) -- customer 9 vehicle 27
+	values ('BMW','M3',2015);
+
+INSERT INTO Vehicle_Owner(custID,vehicleID,licensePlate,startMileage,milesPerYear)
+	values (4,19,'19MXDB',10000,5000);
+INSERT INTO Vehicle_Owner(custID,vehicleID,licensePlate,startMileage,milesPerYear)
+	values (5,20,'20MXDB',20000,7000);
+INSERT INTO Vehicle_Owner(custID,vehicleID,licensePlate,startMileage,milesPerYear)
+	values (1,21,'21MXDB',30000,5000);
+INSERT INTO Vehicle_Owner(custID,vehicleID,licensePlate,startMileage,milesPerYear)
+	values (2,22,'22MXDB',30000,5000);
+INSERT INTO Vehicle_Owner(custID,vehicleID,licensePlate,startMileage,milesPerYear)
+	values (3,23,'23MXDB',40000,7000);
+INSERT INTO Vehicle_Owner(custID,vehicleID,licensePlate,startMileage,milesPerYear)
+	values (6,24,'24MXDB',10000,5000);
+INSERT INTO Vehicle_Owner(custID,vehicleID,licensePlate,startMileage,milesPerYear)
+	values (7,25,'25MXDB',10000,7000);
+INSERT INTO Vehicle_Owner(custID,vehicleID,licensePlate,startMileage,milesPerYear)
+	values (8,26,'26MXDB',8000,3000);
+INSERT INTO Vehicle_Owner(custID,vehicleID,licensePlate,startMileage,milesPerYear)
+	values (9,27,'27MXDB',9000,3000);
+
+	
+
+
+
+INSERT INTO Customer( phone, email)
+	values ('110-120-1234','JK@gmail.com');
+
+INSERT INTO Customer( phone, email)
+	values ('111-120-1234','OK@gmail.com');
+
+INSERT INTO Customer( phone, email)
+	values ('112-120-1234','IK@gmail.com');
+    
+INSERT INTO Customer( phone, email)
+	values ('113-120-1234','PK@gmail.com');
+
+INSERT INTO Customer( phone, email)
+	values ('114-120-1234','YK@gmail.com');
+
+INSERT INTO Customer( phone, email)
+	values ('115-120-1234','LK@gmail.com');  
+
+INSERT INTO Customer( phone, email)
+	values ('116-120-1234','TK@gmail.com');    
+
+INSERT INTO Customer( phone, email)
+	values ('117-120-1234','RK@gmail.com');
+
+INSERT INTO Customer( phone, email)
+	values ('888-120-1234','AAA@gmail.com');
+
+INSERT INTO Customer( phone, email)
+	values ('800-120-1234','BBB@gmail.com');
+    
+
+INSERT INTO ZipArea(zipcode,city,state)
+	values (90505,'Torrance','CA');
+INSERT INTO ZipArea(zipcode,city,state)
+	values (90503,'Gardena','CA');
+INSERT INTO ZipArea(zipcode,city,state)
+	values (90101,'Los Angeles','CA');
+INSERT INTO ZipArea(zipcode,city,state)
+	values (90102,'Pasadena','CA');
+
+
+INSERT INTO Individual(custID,firstName,lastName,street,zipcode)
+	values (1,'Jhon','Kappa','Lomita',90505);
+
+INSERT INTO Individual(custID,firstName,lastName,street,zipcode)
+	values (2,'Ohm','Karma','Lomita',90505);
+    
+INSERT INTO Individual(custID,firstName,lastName,street,zipcode)
+	values (3,'Ivan','Kooper','8th',90101);
+    
+INSERT INTO Individual(custID,firstName,lastName,street,zipcode)
+	values (4,'Park','Koo','4th',90101);
+    
+INSERT INTO Individual(custID,firstName,lastName,street,zipcode)
+	values (5,'Yoon','Kama','Diamond',90102);
+    
+INSERT INTO Individual(custID,firstName,lastName,street,zipcode)
+	values (6,'Luthor','Kingdom','Gardena',90503);
+    
+INSERT INTO Individual(custID,firstName,lastName,street,zipcode)
+	values (7,'Ruin','Kim','PCH',90505);
+
+INSERT INTO Business(custID,name)
+	values (8,'AAA corp');
+
+INSERT INTO Business(custID,name)
+	values (9,'BBB corp');
+
+
+INSERT INTO Address(custID,street,zipcode,addressType)
+	values (8,'Western',90505,'Company');
+
+
+INSERT INTO Address(custID,street,zipcode,addressType)
+	values (9,'6th',90101,'Company');
+
+INSERT INTO Email(date)
+	values ('2016-12-13');
+
+
+INSERT INTO Referred(custID)
+	values (1);
+
+INSERT INTO Referred(custID)
+	values (2);
+
+INSERT INTO Referred(custID)
+	values (3);
+
+INSERT INTO Premier(custID,registerDate,points,ReferredBenefitsUsed)
+	values (4,'2016-10-10',300,100);
+    
+INSERT INTO Premier(custID,registerDate,points,ReferredBenefitsUsed)
+	values (6,'2013-10-10',3000,1000);
+
+INSERT INTO Premier_Payment(custID,month,year,paymentTotal)
+	values (4,10,16,1200);
+    
+INSERT INTO Premier_Payment(custID,month,year,paymentTotal)
+	values (6,10,16,1200);
+
+INSERT INTO Steady(custID,registerDate,points,ReferredBenefitsUsed)
+	values (5,'2015-10-10',100,0);
+
+INSERT INTO Steady(custID,registerDate,points,ReferredBenefitsUsed)
+	values (7,'2012-10-10',10000,0);
+
+INSERT INTO Steady_Email(custID,vehicleID,date)
+	values (5,20,'2016-10-10');
+
+INSERT INTO Steady_Email(custID,vehicleID,date)
+	values (7,25,'2013-10-10');
+
+INSERT INTO Referred_by_Premier(custID,referredByID,referredDate)
+	values (1,4,'2016-11-10');
+
+INSERT INTO Referred_by_Premier(custID,referredByID,referredDate)
+	values (2,4,'2016-12-10');
+
+INSERT INTO Referred_by_Steady(custID,referredByID,referredDate)
+	values (3,5,'2015-11-10');
+
+INSERT INTO Prospective(custID)
+	values (8);
+
+INSERT INTO Prospective(custID)
+	values (9);
+
+INSERT INTO Prospective_Email(custID,date,itemSpecial)
+	values (8,'2016-12-12','Oil change');
+
+INSERT INTO Prospective_Email(custID,date,itemSpecial)
+	values (9,'2016-12-13','Tire balance check');
