@@ -566,23 +566,77 @@ INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
 INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
 	values (1,'Oil change',4500);
 INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (1,'Oil change',10000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (1,'Brake Pad Replacement',10000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (1,'Transmission Fluid Flush',10000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
 	values (2,'Oil change',4500);
 INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (2,'Oil change',10000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (2,'Brake Pad Replacement',10000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (2,'Transmission Fluid Flush',10000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
 	values (3,'Oil change',3000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (3,'Oil change',9000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (3,'Brake Pad Replacement',9000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (3,'Power Steering Fluid Flush',9000);
 INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
 	values (3,'Tire balance check',3000);
 INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
 	values (4,'Oil change',3000);
 INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (4,'Oil change',9000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (4,'Brake Pad Replacement',9000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (4,'Power Steering Fluid Flush',9000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
 	values (5,'Oil change',3000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (5,'Oil change',9000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (5,'Brake Pad Replacement',9000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (5,'Power Steering Fluid Flush',9000);
 INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
 	values (6,'Oil change',3200);
 INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (6,'Oil change',11000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (6,'Brake Pad Replacement',11000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (6,'Spark Plug Replacement',11000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
 	values (7,'Oil change',3200);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (7,'Oil change',11000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (7,'Brake Pad Replacement',11000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (7,'Spark Plug Replacement',11000);
 INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
 	values (8,'Oil change',1500);
 INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (8,'Oil change',7000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (8,'Brake Pad Replacement',7000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (8,'Tire Replacement',7000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
 	values (9,'Oil change',1500);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (9,'Oil change',7000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (9,'Brake Pad Replacement',7000);
+INSERT INTO Maintenance_Interval_Item(vehicleID,maint_item_name,numMiles)
+	values (9,'Tire Replacement',7000);
 /*Customer, Email and Vehicle data insertion end-----------------
 
 ------------------------------------------*/
