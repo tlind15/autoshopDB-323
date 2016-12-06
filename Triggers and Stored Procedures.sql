@@ -89,16 +89,10 @@ begin
 		set baseDollarRate = 0
 	if tierNumber = 1 then
 		set baseDollarRate = 200
-		set tierNumber = 1
 	if tierNumber = 2 then
-		set baseDollarRate = 225
-		set tierNumber = 2
+		set baseDollarRate = 225;
 	if tierNumber = 3 then
-		set baseDollarRate = 250
-
-	update Retirement_Tier
-	set baseDollarRate = 500 * minYearsOnJob;
-
+		set baseDollarRate = 250;
 end;
 /*
 	Calculate the current amount of vacation/sick hours that an employee has
