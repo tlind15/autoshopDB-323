@@ -291,8 +291,7 @@ INSERT INTO Business(custID,name)
 
 
 INSERT INTO Address(custID,street,zipcode,addressType)
-	values (8,'Western',90505,'Company');
-
+	values (10,'Western',90505,'Company');
 
 INSERT INTO Address(custID,street,zipcode,addressType)
 	values (9,'6th',90101,'Company');
