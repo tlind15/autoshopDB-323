@@ -426,6 +426,25 @@ INSERT INTO Vehicle_Interval(vehicleID,milesDriven)
 	values (8,1500);
 INSERT INTO Vehicle_Interval(vehicleID,milesDriven)
 	values (9,1500);
+    
+INSERT INTO Vehicle_Interval(vehicleID,milesDriven)
+	values (1,10000);
+INSERT INTO Vehicle_Interval(vehicleID,milesDriven)
+	values (2,10000);
+INSERT INTO Vehicle_Interval(vehicleID,milesDriven)
+	values (3,9000);
+INSERT INTO Vehicle_Interval(vehicleID,milesDriven)
+	values (4,9000);
+INSERT INTO Vehicle_Interval(vehicleID,milesDriven)
+	values (5,9000);
+INSERT INTO Vehicle_Interval(vehicleID,milesDriven)
+	values (6,11000);
+INSERT INTO Vehicle_Interval(vehicleID,milesDriven)
+	values (7,11000);
+INSERT INTO Vehicle_Interval(vehicleID,milesDriven)
+	values (8,7000);
+INSERT INTO Vehicle_Interval(vehicleID,milesDriven)
+	values (9,7000);
 
 INSERT INTO Steady_Email(custID,vehicleID,date)
 	values (5,2,'2016-10-10');
