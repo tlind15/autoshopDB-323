@@ -54,22 +54,47 @@ Create Trigger EmployeeID_event
 Create Trigger Maintenance_Item_event
 /*
 	Calculate the monthly retirement pay of a given employee
-	Retirement,  work at least 10 years at Dave’s  $500 * # of years worked for Dave’s per month. 
-	(From Term Project Requirement Breakdown)
+	(From Business Rules)
 */
+delimiter //
 Create Trigger Past_event
 After Insert on Past 
-FOR REACH ROW
+FOR EACH ROW
 begin
-	update Retirement_Tier
-	baseDollarRate = 500 * minYearsOnJob
+	if tierNumber = 0 then
+		set baseDollarRate = 0
+	if tierNumber = 1 then
+		set baseDollarRate = 200
+		set tierNumber = 1
+	if tierNumber = 2 then
+		set baseDollarRate = 225
+		set tierNumber = 2
+	if tierNumber = 3 then
+		set baseDollarRate = 250
 
-end
+	update Retirement_Tier
+	set baseDollarRate = 500 * minYearsOnJob
+
+end;//
 /*
 	Calculate the current amount of vacation/sick hours that an employee has
 */
+delimiter //
 Create Trigger Vacation_SickHours_event
-on 
+After Insert on Present
+FOR EACH ROW
+begin
+	update Benefits_Tier
+	if tierNumber = 1 then
+		set vacationPerHourRate = 0.04
+		set sickPerHourRate = 0.03
+	if tierNumber = 2 then
+		set vacationPerHourRate = 0.06
+		set sickPerHourRate = 0.05
+	if tierNumber = 3 then
+		set vacationPerHourRate = 0.08
+		set sickPerHourRate = 0.07
+end;
 /*
 	When a email is added to Prospective Email, check if the custID belongs to a
 	 prospective customer, if it does and their id already appears 3 or more times do not allow the insert
