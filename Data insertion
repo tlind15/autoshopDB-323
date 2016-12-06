@@ -744,10 +744,10 @@ INSERT INTO Part_Order(partName,supplierName,date,quantity,priceForOne)
 INSERT INTO Part_Order(partName,supplierName,date,quantity,priceForOne) 
 	values ('Motor Oil','emotional','2016-8-30',400,22);
 
-INSERT INTO Part_At_Daves(orderedFromID,serialNum)
+INSERT INTO Part_at_Daves(orderedFromID,serialNum)
 	values (1,000001);
 
-INSERT INTO Part_At_Daves(orderedFromID,serialNum)
+INSERT INTO Part_at_Daves(orderedFromID,serialNum)
 	values (2,000002);
 
 INSERT INTO Part_Maintenance(mName,partSerialNum,numOfPartNeeded)
@@ -767,9 +767,9 @@ INSERT INTO Merchandise_Item_Order(supplierName,merchandiseItem,date,quantity,pr
 INSERT INTO Merchandise_Item_Order(supplierName,merchandiseItem,date,quantity,priceForOne)
 	values ('we are the best','Arizona','2010-10-10',200,1);
 
-INSERT INTO Merchandise_Item_Instore(orderedFromID,serialNum)
+INSERT INTO Merchandise_Item_InStore(orderedFromID,serialNum)
 	values (1,00001);
-INSERT INTO Merchandise_Item_Instore(orderedFromID,serialNum)
+INSERT INTO Merchandise_Item_InStore(orderedFromID,serialNum)
 	values (2,00002);
 
 
