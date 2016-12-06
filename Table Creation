@@ -71,8 +71,7 @@ Individual
 --------------------------------------------------------------------*/
 CREATE TABLE Individual (
     custID INT NOT NULL,
-    firstName VARCHAR(40) NOT NULL,
-    lastName VARCHAR(40) NOT NULL,
+    name VARCHAR(100),
     street VARCHAR(40) NOT NULL,
     zipcode INT NOT NULL,
     PRIMARY KEY Individual_pk (custID),
