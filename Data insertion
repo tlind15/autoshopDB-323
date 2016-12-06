@@ -503,7 +503,7 @@ INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
 	values (3,'Oil change',30);
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
-	values (3,'Tire balance check',10);
+	values (3,'Tire balance check',50);
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
 	values (3,'Brake Pad Replacement',115);
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
@@ -512,7 +512,7 @@ INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
 	values (4,'Oil change',30);
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
-	values (4,'Tire balance check',10);
+	values (4,'Tire balance check',50);
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
 	values (4,'Brake Pad Replacement',115);
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
@@ -521,7 +521,7 @@ INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
 	values (5,'Oil change',30);
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
-	values (5,'Tire balance check',10);
+	values (5,'Tire balance check',50);
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
 	values (5,'Brake Pad Replacement',115);
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
@@ -530,7 +530,7 @@ INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
 	values (6,'Oil change',25);
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
-	values (6,'Tire balance check',15);
+	values (6,'Tire balance check',50);
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
 	values (6,'Brake Pad Replacement', 105);
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
@@ -540,7 +540,7 @@ INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
 	values (7,'Oil change',25);
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
-	values (7,'Tire balance check',15);
+	values (7,'Tire balance check',50);
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
 	values (7,'Brake Pad Replacement', 105);
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
@@ -660,27 +660,14 @@ INSERT INTO Visit(ST_ID,custID,vehicleID,date,pointsUsed)
 	values (7,8,8,'2016-12-10',0);
 
 
-INSERT INTO Maintenance_Pack_Item(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,numMiles,finalCost)
-	values (4,1,1,'2016-12-10',3,'Oil change',3000,30);
 
 INSERT INTO Maintenance_Pack_Item(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,numMiles,finalCost)
-	values (6,1,1,'2016-12-10',3,'Tire balance check',3000,10);
-
-INSERT INTO Maintenance_Pack_Item(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,numMiles,finalCost)
-	values (4,3,4,'2016-12-10',1,'Oil change',4500,80);
-
-INSERT INTO Maintenance_Pack_Item(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,numMiles,finalCost)
-	values (4,5,5,'2016-12-10',2,'Oil change',4500,80);
-
-INSERT INTO Maintenance_Pack_Item(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,numMiles,finalCost)
-	values (4,7,8,'2016-12-10',8,'Oil change',1500,200);
+	values (6,1,1,'2016-12-10',3,'Tire balance check',3000,50);
 
 
 INSERT INTO Maintenance_Item_Work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
 	values (4,1,1,'2016-12-10',3,'Oil change',30);
 
-INSERT INTO Maintenance_Item_Work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
-	values (6,1,1,'2016-12-10',3,'Tire balance check',10);
 
 INSERT INTO Maintenance_Item_Work(mechanicID,ST_ID,custID,date,vehicleID,maint_item_name,finalCost)
 	values (4,3,4,'2016-12-10',1,'Oil change',80);
@@ -749,6 +736,25 @@ INSERT INTO Part_at_Daves(orderedFromID,serialNum)
 
 INSERT INTO Part_at_Daves(orderedFromID,serialNum)
 	values (2,000002);
+
+INSERT INTO Part_at_Daves(orderedFromID,serialNum)
+	values (3,000003);
+
+INSERT INTO Part_at_Daves(orderedFromID,serialNum)
+	values (4,000004);
+    
+INSERT INTO Part_at_Daves(orderedFromID,serialNum)
+	values (5,000005);
+
+INSERT INTO Part_at_Daves(orderedFromID,serialNum)
+	values (6,000006);
+
+INSERT INTO Part_at_Daves(orderedFromID,serialNum)
+	values (7,000007);
+
+INSERT INTO Part_at_Daves(orderedFromID,serialNum)
+	values (8,000008);
+
 
 INSERT INTO Part_Maintenance(mName,partSerialNum,numOfPartNeeded)
 	values ('Oil change',000001,1);
