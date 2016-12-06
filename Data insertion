@@ -481,7 +481,7 @@ INSERT INTO Prospective_Email(custID,date,itemSpecial)
 	values (9,'2016-12-13','Tire balance check');
 
 
-NSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
+INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
 	values (1,'Oil change',80);
 INSERT INTO Vehicle_Maintenance(vehicleID,maint_item_name,cost)
 	values (1,'Tire balance check',50);
