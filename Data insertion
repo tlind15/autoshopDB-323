@@ -581,6 +581,11 @@ INSERT INTO supplier(name,email,phone)
 	values ('amoa','amoa@gmail.com','666-544-1234');
 INSERT INTO supplier(name,email,phone)
 	values ('we are the best','best@gmail.com','777-777-7777');
+INSERT INTO supplier(name,email,phone)
+	values ('we are not the worst','notworst@gmail.com','888-888-8888');
+INSERT INTO supplier(name,email,phone)
+	values ('emotional','emotional@gmail.com','999-999-9999');
+
 
 
 
