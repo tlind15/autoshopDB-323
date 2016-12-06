@@ -294,6 +294,9 @@ INSERT INTO Address(custID,street,zipcode,addressType)
 	values (10,'Western',90505,'Company');
 
 INSERT INTO Address(custID,street,zipcode,addressType)
+	values (9,'321 E 5th Street',90101,'Company');
+
+INSERT INTO Address(custID,street,zipcode,addressType)
 	values (9,'6th',90101,'Company');
 
 INSERT INTO Email(date)
