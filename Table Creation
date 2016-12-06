@@ -329,6 +329,7 @@ CREATE TABLE Part_at_Daves (
 CREATE TABLE Part_Maintenance (
     mName VARCHAR(40) NOT NULL,
     partSerialNum INT NOT NULL,
+    numOfPartNeeded int,
     PRIMARY KEY part_maintenance_pk (mName , partSerialNum),
     CONSTRAINT maintenance_item_part_maintenance_fk FOREIGN KEY (mName)
         REFERENCES Maintenance_Item (mName),
