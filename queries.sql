@@ -145,8 +145,32 @@ UNION
 ORDER BY points desc;
 
 --#7
+SELECT firstName, lastName FROM (
+	SELECT  firstName, lastName, maint_item_name as Items FROM
+	mechanic_skill INNER JOIN employee as a USING (employeeID) INNER JOIN maintenance_pack_item as b ON a.employeeID = b.mechanicID
+	GROUP BY firstname, lastName
+) as sub 
+WHERE (sub.firstName, sub.lastName, sub.Items) IN (SELECT firstName, lastName, skill FROM employee INNER JOIN mechanic_skill USING (employeeID));
 	
 --#6
+SELECT 
+    make,
+    model,
+    year,
+    milesDriven,
+    GROUP_CONCAT(b.maint_item_name) AS Items,
+    SUM(cost) AS Total
+FROM
+    vehicle
+        INNER JOIN
+    vehicle_interval AS a USING (vehicleID)
+        INNER JOIN
+    maintenance_interval_item AS b ON a.milesDriven = b.numMiles
+        AND a.vehicleID = b.vehicleID
+        INNER JOIN
+    vehicle_maintenance AS c ON (b.vehicleID = c.vehicleID
+        AND b.maint_item_name = c.maint_item_name)
+GROUP BY make , model , year , milesDriven;
 
 --#5
 
